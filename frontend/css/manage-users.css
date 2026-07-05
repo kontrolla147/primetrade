@@ -1,0 +1,1400 @@
+/*==========================================================
+RESET
+==========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#f4f7fb;
+
+    color:#111827;
+
+}
+
+/*==========================================================
+MAIN
+==========================================================*/
+
+.manage-main{
+
+    margin-left:280px;
+
+    min-height:100vh;
+
+    padding:30px;
+
+}
+
+@media(max-width:992px){
+
+.manage-main{
+
+    margin-left:0;
+
+    padding:90px 18px 25px;
+
+}
+
+}
+
+/*==========================================================
+PAGE HEADER
+==========================================================*/
+
+.page-header{
+
+    margin-bottom:22px;
+
+}
+
+.page-header h1{
+
+    font-size:28px;
+
+    font-weight:800;
+
+    color:#111827;
+
+    margin-bottom:4px;
+
+}
+
+.page-header p{
+
+    font-size:14px;
+
+    color:#6b7280;
+
+}
+
+/*==========================================================
+SEARCH
+==========================================================*/
+
+.search-card{
+
+    background:#fff;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    margin-bottom:22px;
+
+    box-shadow:0 12px 30px rgba(15,23,42,.06);
+
+}
+
+.search-card input{
+
+    width:100%;
+
+    height:48px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    padding:0 16px;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.search-card input:focus{
+
+    outline:none;
+
+    border-color:#16a34a;
+
+    box-shadow:0 0 0 4px rgba(22,163,74,.10);
+
+}
+
+/*==========================================================
+TABLE CARD
+==========================================================*/
+
+.table-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(15,23,42,.06);
+
+}
+
+.table-responsive{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+/*==========================================================
+TABLE
+==========================================================*/
+
+table{
+
+    width:100%;
+
+    min-width:900px;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#0f172a;
+
+}
+
+thead th{
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    padding:16px 18px;
+
+    text-align:left;
+
+    white-space:nowrap;
+
+}
+
+tbody tr{
+
+    border-bottom:1px solid #eef2f7;
+
+    transition:.25s;
+
+}
+
+tbody tr:last-child{
+
+    border-bottom:none;
+
+}
+
+tbody tr:hover{
+
+    background:#f9fafb;
+
+}
+
+tbody td{
+
+    padding:16px 18px;
+
+    font-size:13px;
+
+    color:#374151;
+
+    vertical-align:middle;
+
+}
+
+/*==========================================================
+STATUS
+==========================================================*/
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:85px;
+
+    height:28px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+.status.active{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.status.suspended{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+/*==========================================================
+MANAGE BUTTON
+==========================================================*/
+
+.manage-btn{
+
+    height:36px;
+
+    padding:0 16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:6px;
+
+    transition:.3s;
+
+}
+
+.manage-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================================================
+EMPTY TABLE
+==========================================================*/
+
+.no-users{
+
+    text-align:center;
+
+    padding:55px;
+
+    color:#94a3b8;
+
+    font-size:14px;
+
+}
+
+/*==========================================================
+PAGINATION
+==========================================================*/
+
+#pagination{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:18px;
+
+    border-top:1px solid #eef2f7;
+
+}
+
+#pagination button{
+
+    width:36px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#f1f5f9;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#pagination button:hover{
+
+    background:#16a34a;
+
+    color:#fff;
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:768px){
+
+.manage-main{
+
+    padding:90px 12px 20px;
+
+}
+
+.page-header h1{
+
+    font-size:24px;
+
+}
+
+.page-header p{
+
+    font-size:13px;
+
+}
+
+.search-card{
+
+    padding:14px;
+
+}
+
+.search-card input{
+
+    height:44px;
+
+    font-size:13px;
+
+}
+
+thead th,
+
+tbody td{
+
+    padding:14px;
+
+}
+
+.manage-btn{
+
+    height:34px;
+
+    font-size:12px;
+
+}
+
+}
+
+
+
+
+/*==========================================================
+USER MODAL
+==========================================================*/
+
+.user-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.65);
+
+    backdrop-filter:blur(5px);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    z-index:9999;
+
+}
+
+.user-modal.show{
+
+    display:flex;
+
+}
+
+/*==========================================================
+MODAL
+==========================================================*/
+
+.user-content{
+
+    width:100%;
+
+    max-width:760px;
+
+    max-height:92vh;
+
+    overflow-y:auto;
+
+    background:#ffffff;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    position:relative;
+
+    box-shadow:0 25px 70px rgba(0,0,0,.15);
+
+    animation:userPopup .25s ease;
+
+}
+
+.user-content::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.user-content::-webkit-scrollbar-thumb{
+
+    background:#d1d5db;
+
+    border-radius:20px;
+
+}
+
+@keyframes userPopup{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px) scale(.97);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/*==========================================================
+CLOSE BUTTON
+==========================================================*/
+
+.close-user{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f3f4f6;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:17px;
+
+}
+
+.close-user:hover{
+
+    background:#dc2626;
+
+    color:#fff;
+
+}
+
+/*==========================================================
+TITLE
+==========================================================*/
+
+.user-content h2{
+
+    font-size:24px;
+
+    font-weight:800;
+
+    margin-bottom:18px;
+
+    color:#111827;
+
+}
+
+/*==========================================================
+USER INFO
+==========================================================*/
+
+.user-info{
+
+    padding:14px 0;
+
+    margin-bottom:20px;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.user-info h3{
+
+    font-size:18px;
+
+    color:#111827;
+
+    margin-bottom:4px;
+
+}
+
+.user-info p{
+
+    font-size:13px;
+
+    color:#6b7280;
+
+}
+
+/*==========================================================
+SECTION TITLE
+==========================================================*/
+
+.section-title{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin:18px 0 12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+/*==========================================================
+FORM GRID
+==========================================================*/
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:14px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:#4b5563;
+
+    margin-bottom:6px;
+
+}
+
+.form-group input{
+
+    width:100%;
+
+    height:42px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    padding:0 12px;
+
+    font-size:13px;
+
+    transition:.3s;
+
+    background:#fff;
+
+}
+
+.form-group input:focus{
+
+    outline:none;
+
+    border-color:#16a34a;
+
+    box-shadow:0 0 0 3px rgba(22,163,74,.10);
+
+}
+
+/*==========================================================
+WALLET INPUTS
+==========================================================*/
+
+.form-group input::placeholder{
+
+    color:#9ca3af;
+
+}
+
+/*==========================================================
+STATUS ACTIONS
+==========================================================*/
+
+.status-actions{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:12px;
+
+    margin-bottom:18px;
+
+}
+
+.status-actions button{
+
+    flex:1;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.3s;
+
+}
+
+#toggleStatus{
+
+    background:#f59e0b;
+
+    color:#fff;
+
+}
+
+#toggleStatus:hover{
+
+    background:#d97706;
+
+}
+
+#loginAsUser{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
+
+#loginAsUser:hover{
+
+    background:#1d4ed8;
+
+}
+
+#approveKyc{
+
+    background:#16a34a;
+
+    color:#fff;
+
+}
+
+#approveKyc:hover{
+
+    background:#15803d;
+
+}
+
+#rejectKyc{
+
+    background:#dc2626;
+
+    color:#fff;
+
+}
+
+#rejectKyc:hover{
+
+    background:#b91c1c;
+
+}
+
+/*==========================================================
+BOTTOM BUTTONS
+==========================================================*/
+
+.bottom-actions{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+.bottom-actions button{
+
+    flex:1;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+#saveUser{
+
+    background:#16a34a;
+
+    color:#fff;
+
+}
+
+#saveUser:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+#deleteUser{
+
+    background:#dc2626;
+
+    color:#fff;
+
+}
+
+#deleteUser:hover{
+
+    background:#b91c1c;
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================================================
+BUTTON STATES
+==========================================================*/
+
+button:disabled{
+
+    opacity:.65;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+/*==========================================================
+INPUTS
+==========================================================*/
+
+input::placeholder{
+
+    color:#9ca3af;
+
+}
+
+input::-webkit-inner-spin-button,
+
+input::-webkit-outer-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+
+/*==========================================================
+SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#94a3b8;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f8fafc;
+
+}
+
+/*==========================================================
+TEXT SELECTION
+==========================================================*/
+
+::selection{
+
+    background:#16a34a;
+
+    color:#fff;
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:768px){
+
+.user-content{
+
+    max-width:100%;
+
+    padding:20px;
+
+    border-radius:18px;
+
+}
+
+.form-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.status-actions{
+
+    flex-direction:column;
+
+}
+
+.bottom-actions{
+
+    flex-direction:column;
+
+}
+
+.status-actions button,
+
+.bottom-actions button{
+
+    width:100%;
+
+}
+
+.user-content h2{
+
+    font-size:22px;
+
+}
+
+.section-title{
+
+    font-size:13px;
+
+}
+
+.form-group input{
+
+    height:40px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.user-content{
+
+    padding:16px;
+
+}
+
+.user-content h2{
+
+    font-size:20px;
+
+}
+
+.user-info h3{
+
+    font-size:16px;
+
+}
+
+.user-info p{
+
+    font-size:12px;
+
+}
+
+.form-group label{
+
+    font-size:11px;
+
+}
+
+.form-group input{
+
+    font-size:12px;
+
+}
+
+.status-actions button,
+
+.bottom-actions button{
+
+    height:40px;
+
+    font-size:12px;
+
+}
+
+}
+
+/*==========================================================
+UTILITY
+==========================================================*/
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/*==========================================================
+SIDEBAR LOGOUT
+==========================================================*/
+
+
+/*==========================================================
+SAVE WALLETS
+==========================================================*/
+
+#saveWallets{
+
+    width:100%;
+
+    height:44px;
+
+    margin-top:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 8px 18px rgba(22,163,74,.15);
+
+}
+
+#saveWallets:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 24px rgba(22,163,74,.25);
+
+}
+
+#saveWallets:active{
+
+    transform:scale(.98);
+
+}
+
+#saveWallets:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+/*==========================================================
+MOBILE ACTION BUTTONS
+==========================================================*/
+
+@media (max-width:768px){
+
+.status-actions{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.status-actions button{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+/* Suspend */
+
+#toggleStatus{
+
+    background:#f59e0b;
+
+    color:#fff;
+
+}
+
+#toggleStatus:hover{
+
+    background:#d97706;
+
+}
+
+/* Login As User */
+
+#loginAsUser{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
+
+#loginAsUser:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* Approve */
+
+#approveKyc{
+
+    background:#16a34a;
+
+    color:#fff;
+
+}
+
+#approveKyc:hover{
+
+    background:#15803d;
+
+}
+
+/* Reject */
+
+#rejectKyc{
+
+    background:#dc2626;
+
+    color:#fff;
+
+}
+
+#rejectKyc:hover{
+
+    background:#b91c1c;
+
+}
+
+/* Bottom Buttons */
+
+.bottom-actions{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+.bottom-actions button{
+
+    width:100%;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+/* Save */
+
+#saveUser{
+
+    background:#16a34a;
+
+    color:#fff;
+
+}
+
+#saveUser:hover{
+
+    background:#15803d;
+
+}
+
+/* Delete */
+
+#deleteUser{
+
+    background:#dc2626;
+
+    color:#fff;
+
+}
+
+#deleteUser:hover{
+
+    background:#b91c1c;
+
+}
+
+/* Wallet */
+
+#saveWallets{
+
+    width:100%;
+
+    height:48px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#111827;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+#saveWallets:hover{
+
+    background:#000;
+
+}
+
+}
+
+/*==========================================================
+SMALL PHONES
+==========================================================*/
+
+@media (max-width:480px){
+
+.user-content{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+}
+
+.section-title{
+
+    font-size:12px;
+
+}
+
+.status-actions button,
+
+.bottom-actions button,
+
+#saveWallets{
+
+    height:44px;
+
+    font-size:13px;
+
+}
+
+}
+
+

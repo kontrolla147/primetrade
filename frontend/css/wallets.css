@@ -1,0 +1,458 @@
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+
+  background: #f5f7fb;
+
+  color: #1e293b;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dashboard-main {
+  margin-left: 270px;
+
+  padding: 40px;
+
+  min-height: 100vh;
+}
+
+@media(max-width:992px){
+
+.dashboard-main{
+
+    margin-left:0;
+
+    padding:90px 20px 30px;
+
+}
+
+}
+
+/*==========================================================
+PAGE HEADER
+==========================================================*/
+
+.page-header{
+
+    margin-bottom:40px;
+
+}
+
+.page-header h1{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.page-header p{
+
+    color:#6b7280;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+
+/*==========================================================
+WALLET GRID
+==========================================================*/
+
+/*==========================================================
+WALLET GRID
+==========================================================*/
+
+.wallet-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.wallet-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+    border:1px solid #edf2f7;
+
+    transition:.35s;
+
+}
+
+.wallet-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+    border-color:#16a34a;
+
+}
+
+@media(max-width:992px){
+
+    .wallet-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/*==========================================================
+WALLET HEADER
+==========================================================*/
+
+.wallet-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+.wallet-header h2{
+
+    color:#111827;
+
+    margin-bottom:4px;
+
+}
+
+.wallet-header span{
+
+    color:#6b7280;
+
+    font-size:14px;
+
+}
+
+.wallet-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    color:#fff;
+
+}
+
+.bitcoin{
+
+    background:#f7931a;
+
+}
+
+.ethereum{
+
+    background:#627eea;
+
+}
+
+.usdt{
+
+    background:#26a17b;
+
+}
+
+/*==========================================================
+WALLET BODY
+==========================================================*/
+
+.wallet-body{
+
+    margin-bottom:25px;
+
+}
+
+.wallet-body label{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+.wallet-address{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    word-break:break-all;
+
+    color:#111827;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+
+/*==========================================================
+COPY BUTTON
+==========================================================*/
+
+.copy-wallet{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    transition:.3s;
+
+}
+
+.copy-wallet:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+
+/*==========================================================
+NOTICE
+==========================================================*/
+
+.wallet-notice{
+
+    background:#fff7ed;
+
+    border-left:5px solid #f97316;
+
+    border-radius:18px;
+
+    padding:30px;
+
+}
+
+.wallet-notice h3{
+
+    color:#ea580c;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:18px;
+
+}
+
+.wallet-notice ul{
+
+    padding-left:22px;
+
+}
+
+.wallet-notice li{
+
+    color:#9a3412;
+
+    line-height:1.9;
+
+    margin-bottom:12px;
+
+}
+
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:992px){
+
+.wallet-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.page-header h1{
+
+    font-size:28px;
+
+}
+
+.wallet-card{
+
+    padding:25px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.page-header h1{
+
+    font-size:24px;
+
+}
+
+.wallet-card{
+
+    padding:20px;
+
+}
+
+.wallet-icon{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:24px;
+
+}
+
+.copy-wallet{
+
+    height:52px;
+
+    font-size:16px;
+
+}
+
+}
+
+/*==========================================================
+SHOW / HIDE ADDRESS
+==========================================================*/
+
+.wallet-address{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.wallet-address span{
+
+    word-break:break-all;
+
+    line-height:1.7;
+
+    color:#111827;
+
+}
+
+.toggle-address{
+
+    align-self:flex-start;
+
+    border:none;
+
+    background:none;
+
+    color:#16a34a;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.toggle-address:hover{
+
+    color:#15803d;
+
+}

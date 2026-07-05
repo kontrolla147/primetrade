@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KYC Verification | PrimeTrade</title>
+
+    <link rel="stylesheet" href="../css/dashboard-nav.css" />
+
+    <link rel="stylesheet" href="../css/kyc.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="sidebarContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="dashboard-main">
+      <!--==========================================================
+
+HERO
+
+===========================================================-->
+
+      <section class="kyc-hero">
+        <div class="hero-left">
+          <span class="hero-badge">
+            <i class="fa-solid fa-shield-halved"></i>
+
+            PrimeTrade Security
+          </span>
+
+          <h1>KYC Verification</h1>
+
+          <p>
+            Complete your identity verification to unlock deposits, withdrawals
+            and all PrimeTrade investment features.
+          </p>
+        </div>
+
+        <div class="hero-right">
+          <div class="security-card">
+            <i class="fa-solid fa-lock"></i>
+
+            <div>
+              <strong>Bank-Level Security</strong>
+
+              <span> Your documents are encrypted and securely stored. </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+STATUS
+
+===========================================================-->
+
+      <section class="kyc-status-card">
+        <div class="status-left">
+          <div class="status-icon">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+
+          <div class="status-content">
+            <span class="status-label"> Account Verification </span>
+
+            <h2 id="kycStatus">Verification Required</h2>
+
+            <p id="kycStatusMessage">You have not submitted your KYC yet.</p>
+          </div>
+        </div>
+
+        <div class="status-right">
+          <div class="review-time">
+            <i class="fa-solid fa-clock"></i>
+
+            <div>
+              <strong>Review Time</strong>
+
+              <span>24 - 48 Hours</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+PROGRESS
+
+===========================================================-->
+
+      <section class="kyc-progress">
+        <div class="progress-step active">
+          <div class="progress-circle">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <span>Personal Info</span>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">
+          <div class="progress-circle">
+            <i class="fa-solid fa-id-card"></i>
+          </div>
+
+          <span>Documents</span>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">
+          <div class="progress-circle">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <span>Review</span>
+        </div>
+
+        <div class="progress-line"></div>
+
+        <div class="progress-step">
+          <div class="progress-circle">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <span>Verified</span>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+FORM
+
+===========================================================-->
+
+      <section class="kyc-card">
+        <div class="card-header">
+          <h2 id="statusTitle">Verify Your Identity</h2>
+
+          <p id="statusText">
+            Complete KYC verification to unlock withdrawals and investing.
+          </p>
+        </div>
+
+        <form id="kycForm">
+          <div class="form-section">
+            <h3>
+              <i class="fa-solid fa-user"></i>
+
+              Personal Information
+            </h3>
+
+            <div class="form-grid">
+              <div class="input-group">
+                <label>Full Name</label>
+
+                <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Date of Birth</label>
+
+                <input type="date" id="dateOfBirth" required />
+              </div>
+
+              <div class="input-group">
+                <label>Nationality</label>
+
+                <input
+                  type="text"
+                  id="nationality"
+                  placeholder="Enter your nationality"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Document Type</label>
+
+                <select id="documentType" required>
+                  <option value="">Select Document</option>
+
+                  <option value="National ID">National ID</option>
+
+                  <option value="Passport">Passport</option>
+
+                  <option value="Driver's License">Driver's License</option>
+                </select>
+              </div>
+
+              <div class="input-group full-width">
+                <label>Document Number</label>
+
+                <input
+                  type="text"
+                  id="documentNumber"
+                  placeholder="Enter document number"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+
+              Upload Documents
+            </h3>
+
+            <div class="upload-section">
+              <div class="input-group">
+                <label>ID Document</label>
+
+                <label class="upload-box" for="documentImage">
+                  <i class="fa-solid fa-id-card"></i>
+
+                  <h4>Upload ID</h4>
+
+                  <p>PNG • JPG • PDF</p>
+
+                  <span id="documentFileName" class="file-name">
+                    No file selected
+                  </span>
+                </label>
+
+                <input
+                  hidden
+                  type="file"
+                  id="documentImage"
+                  accept=".jpg,.jpeg,.png,.pdf"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <label>Selfie Verification</label>
+
+                <label class="upload-box" for="selfieImage">
+                  <i class="fa-solid fa-camera"></i>
+
+                  <h4>Upload Selfie</h4>
+
+                  <p>PNG • JPG</p>
+
+                  <span id="selfieFileName" class="file-name">
+                    No file selected
+                  </span>
+                </label>
+
+                <input
+                  hidden
+                  type="file"
+                  id="selfieImage"
+                  accept=".jpg,.jpeg,.png"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" id="submitKyc" class="submit-btn">
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Verify My Identity
+          </button>
+        </form>
+      </section>
+
+      <!--==========================================================
+
+NOTICE
+
+===========================================================-->
+
+      <section class="kyc-notice">
+        <h3>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+
+          Important Information
+        </h3>
+
+        <ul>
+          <li>Upload clear, readable identity documents.</li>
+
+          <li>All information must exactly match your ID.</li>
+
+          <li>Verification usually takes 24–48 hours.</li>
+
+          <li>Withdrawals require an approved KYC.</li>
+        </ul>
+      </section>
+    </main>
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+      (async () => {
+        await loadComponent(
+          "sidebarContainer",
+
+          "../components/dashboard-nav.html",
+        );
+
+        await loadComponent(
+          "modalContainer",
+
+          "../components/confirm-modal.html",
+        );
+
+        document.dispatchEvent(new Event("componentsLoaded"));
+      })();
+    </script>
+    <script src="../js/global.js"></script>
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/dashboard-nav.js"></script>
+
+    <script src="../js/kyc.js"></script>
+        <script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '859c95c1159b8f41559f056a6563087556ca57c5';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+
+<a
+  href="https://wa.me/12157689799"
+  class="whatsapp-btn"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+  </body>
+</html>

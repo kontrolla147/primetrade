@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  
+    <title>Create Account | PrimeTrade</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Shared Auth CSS -->
+
+    <link rel="stylesheet" href="../css/auth.css" />
+  </head>
+
+  <!--==========================================================
+ANIMATED BACKGROUND
+===========================================================-->
+
+<div class="background">
+
+    <div class="background-grid"></div>
+
+    <div class="background-glow glow-left"></div>
+
+    <div class="background-glow glow-right"></div>
+
+    <div class="floating-icons">
+
+        <i class="fa-brands fa-bitcoin"></i>
+
+        <i class="fa-brands fa-ethereum"></i>
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <i class="fa-solid fa-lock"></i>
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <i class="fa-solid fa-coins"></i>
+
+        <i class="fa-solid fa-globe"></i>
+
+    </div>
+
+</div>
+
+<!--==========================================================
+REGISTER
+===========================================================-->
+
+<section class="auth-section">
+
+    <div class="auth-card">
+
+        <div class="card-glow"></div>
+
+        <!--==========================================================
+LOGO
+===========================================================-->
+
+        <div class="auth-logo">
+
+            <a href="../index.html">
+
+                Prime<span>Trade</span>
+
+            </a>
+
+        </div>
+
+        <!--==========================================================
+HEADER
+===========================================================-->
+
+        <div class="auth-header">
+
+            <h1>Create Your Account</h1>
+
+            <p>
+
+                Join thousands of investors building wealth with PrimeTrade.
+
+            </p>
+
+        </div>
+
+        <!-- Form -->
+
+        <form id="registerForm">
+          <!-- Full Name -->
+
+          <div class="input-group">
+            <label>Full Name</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-user"></i>
+
+              <input
+                type="text"
+                id="fullName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Username -->
+
+          <div class="input-group">
+            <label>Username</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-at"></i>
+
+              <input
+                type="text"
+                id="username"
+                placeholder="Choose a username"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Email -->
+
+          <div class="input-group">
+            <label>Email Address</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-envelope"></i>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Phone -->
+
+          <div class="input-group">
+            <label>Phone Number</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-phone"></i>
+
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Enter phone number"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Country -->
+
+          <div class="input-group">
+
+    <label>Country</label>
+
+    <div class="input-box">
+
+        <i class="fa-solid fa-earth-africa"></i>
+
+        <select id="country" required>
+
+            <option value="">Loading countries...</option>
+
+        </select>
+
+    </div>
+
+</div>
+          <!-- Password -->
+
+          <div class="input-group">
+            <label>Password</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                type="password"
+                id="password"
+                placeholder="Create password"
+                required
+              />
+
+              <span class="toggle-password">
+                <i class="fa-solid fa-eye"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Confirm Password -->
+
+          <div class="input-group">
+            <label>Confirm Password</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+                required
+              />
+
+              <span class="toggle-password">
+                <i class="fa-solid fa-eye"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Terms -->
+
+          <div class="auth-options">
+            <label class="remember">
+              <input type="checkbox" required />
+
+              I agree to the Terms & Conditions
+            </label>
+          </div>
+
+          <!-- Button -->
+
+          <button type="submit" class="auth-btn">Create Account</button>
+        </form>
+
+        <!-- Divider -->
+
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+        <!-- Login -->
+
+        <div class="auth-footer">
+          Already have an account?
+
+          <a href="login.html"> Login </a>
+        </div>
+
+        <!-- Back Home -->
+
+        <div class="back-home">
+          <a href="../index.html">
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back To Home
+          </a>
+        </div>
+      </div>
+    </section>
+<div id="toast-container"></div>
+    <script src="../js/global.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/register.js"></script>
+  </body>
+</html>

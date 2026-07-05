@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Transactions | PrimeTrade Admin</title>
+
+    <link rel="stylesheet" href="../css/global.css" />
+
+    <link rel="stylesheet" href="../css/manage-nav.css" />
+
+    <link rel="stylesheet" href="../css/manage-transactions.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="manageNavContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="manage-main">
+      <!--==========================================================
+
+PAGE HEADER
+
+===========================================================-->
+
+      <section class="page-header">
+        <div>
+          <h1>Manage Transactions</h1>
+
+          <p>View and monitor every transaction performed on PrimeTrade.</p>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+STATISTICS
+
+===========================================================-->
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon total">
+            <i class="fa-solid fa-receipt"></i>
+          </div>
+
+          <div>
+            <span>Total Transactions</span>
+
+            <h2 id="totalTransactions">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon pending">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+
+          <div>
+            <span>Pending</span>
+
+            <h2 id="pendingTransactions">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon approved">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <div>
+            <span>Approved</span>
+
+            <h2 id="approvedTransactions">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon rejected">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+
+          <div>
+            <span>Rejected</span>
+
+            <h2 id="rejectedTransactions">0</h2>
+          </div>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+FILTERS
+
+===========================================================-->
+
+      <section class="filter-card">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            id="searchTransaction"
+            placeholder="Search username or reference..."
+          />
+        </div>
+
+        <select id="typeFilter">
+          <option value="all">All Types</option>
+
+          <option>Deposit</option>
+
+          <option>Withdrawal</option>
+
+          <option>Investment</option>
+
+          <option>Investment Profit</option>
+
+          <option>Bonus</option>
+
+          <option>Referral Bonus</option>
+        </select>
+
+        <select id="statusFilter">
+          <option value="all">All Status</option>
+
+          <option>Pending</option>
+
+          <option>Approved</option>
+
+          <option>Rejected</option>
+
+          <option>Running</option>
+
+          <option>Completed</option>
+
+          <option>Credited</option>
+        </select>
+      </section>
+
+      <!--==========================================================
+
+TABLE
+
+===========================================================-->
+
+      <section class="table-card">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>User</th>
+
+                <th>Type</th>
+
+                <th>Amount</th>
+
+                <th>Status</th>
+
+                <th>Coin</th>
+
+                <th>Reference</th>
+
+                <th>Date</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="transactionTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+PAGINATION
+
+===========================================================-->
+
+      <section class="pagination">
+        <button id="previousPage">
+          <i class="fa-solid fa-chevron-left"></i>
+
+          Previous
+        </button>
+
+        <div>
+          Page
+
+          <span id="currentPage"> 1 </span>
+
+          of
+
+          <span id="totalPages"> 1 </span>
+        </div>
+
+        <button id="nextPage">
+          Next
+
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </section>
+    </main>
+
+    <!--==========================================================
+
+VIEW TRANSACTION MODAL
+
+===========================================================-->
+
+    <div class="modal hidden" id="transactionModal">
+      <div class="modal-content large">
+        <div class="modal-header">
+          <h2>Transaction Details</h2>
+
+          <button id="closeTransactionModal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="details-grid">
+          <div>
+            <label> Username </label>
+
+            <p id="detailUsername"></p>
+          </div>
+
+          <div>
+            <label> Full Name </label>
+
+            <p id="detailFullName"></p>
+          </div>
+
+          <div>
+            <label> Email </label>
+
+            <p id="detailEmail"></p>
+          </div>
+
+          <div>
+            <label> Transaction Type </label>
+
+            <p id="detailType"></p>
+          </div>
+
+          <div>
+            <label> Amount </label>
+
+            <p id="detailAmount"></p>
+          </div>
+
+          <div>
+            <label> Status </label>
+
+            <p id="detailStatus"></p>
+          </div>
+
+          <div>
+            <label> Coin </label>
+
+            <p id="detailCoin"></p>
+          </div>
+
+          <div>
+            <label> Reference </label>
+
+            <p id="detailReference"></p>
+          </div>
+
+          <div>
+            <label> Wallet Address </label>
+
+            <p id="detailWallet"></p>
+          </div>
+
+          <div>
+            <label> Created </label>
+
+            <p id="detailCreated"></p>
+          </div>
+
+          <div>
+            <label> Description </label>
+
+            <p id="detailDescription"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+      (async () => {
+        await loadComponent(
+          "manageNavContainer",
+
+          "../components/manage-navbar.html",
+        );
+
+        await loadComponent(
+          "modalContainer",
+
+          "../components/confirm-modal.html",
+        );
+
+        document.dispatchEvent(new Event("componentsLoaded"));
+      })();
+    </script>
+
+    <script src="../js/global.js"></script>
+
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/manage-nav.js"></script>
+
+    <script src="../js/manage-transactions.js"></script>
+  </body>
+</html>

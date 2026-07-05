@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/dashboard-nav.css" />
+    <link rel="stylesheet" href="../css/withdraw.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="sidebarContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <!--==========================================================
+WITHDRAW PAGE
+===========================================================-->
+
+    <main class="dashboard-main">
+      <!--==========================================================
+    PAGE HEADER
+    ===========================================================-->
+
+      <section class="page-header">
+        <h1>Withdraw Funds</h1>
+
+        <p>Request a secure withdrawal from your PrimeTrade account.</p>
+      </section>
+
+      <!--==========================================================
+    WITHDRAW CONTAINER
+    ===========================================================-->
+
+      <section class="withdraw-container">
+        <div class="withdraw-card">
+          <div class="card-header">
+            <h2>Make a Withdrawal</h2>
+
+            <p>Complete the form below to submit your withdrawal request.</p>
+          </div>
+
+          <form id="withdrawForm">
+            <!-- Amount -->
+
+            <div class="input-group">
+              <label> Withdrawal Amount (USD) </label>
+
+              <div class="input-box">
+                <i class="fa-solid fa-dollar-sign"></i>
+
+                <input
+                  type="number"
+                  id="amount"
+                  placeholder="Enter withdrawal amount"
+                  min="1"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Cryptocurrency -->
+
+            <div class="input-group">
+              <label> Select Cryptocurrency </label>
+
+              <div class="input-box">
+                <i class="fa-brands fa-bitcoin"></i>
+
+                <select id="coin" required>
+                  <option value="">Choose Cryptocurrency</option>
+
+                  <option value="BTC">Bitcoin (BTC)</option>
+
+                  <option value="ETH">Ethereum (ETH)</option>
+
+                  <option value="USDT_TRC20">USDT (TRC20)</option>
+
+                  <option value="USDT_ERC20">USDT (ERC20)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Wallet Address -->
+
+            <div class="input-group">
+              <label> Your Wallet Address </label>
+
+              <div class="input-box">
+                <i class="fa-solid fa-wallet"></i>
+
+                <input
+                  type="text"
+                  id="walletAddress"
+                  placeholder="Enter your wallet address"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Notice -->
+
+            
+            <!-- Submit -->
+
+            <button type="submit" class="withdraw-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+
+              Request Withdrawal
+            </button>
+          </form>
+
+
+          <div class="withdraw-info">
+              <h3>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                Important Notice
+              </h3>
+
+              <ul>
+                <li>
+                  Ensure your wallet address is correct before submitting.
+                </li>
+
+               
+
+                <li>
+                  Incorrect wallet addresses may result in permanent loss of
+                  funds.
+                </li>
+
+                <li>Once approved, your withdrawal cannot be cancelled.</li>
+              </ul>
+            </div>
+
+        </div>
+      </section>
+
+      <section id="withdrawTrackerContainer"></section>
+      
+      <!--==========================================================
+    WITHDRAWAL HISTORY
+    ===========================================================-->
+
+      <section class="withdraw-history">
+        <div class="card-header">
+          <h2>Recent Withdrawals</h2>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Amount</th>
+
+                <th>Coin</th>
+              <th>Wallet Address</th>
+                <th>Status</th>
+
+                <th>Date</th>
+              </tr>
+            </thead>
+
+            <tbody id="withdrawHistory"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+      (async () => {
+        await loadComponent(
+          "sidebarContainer",
+          "../components/dashboard-nav.html",
+        );
+
+        await loadComponent(
+          "modalContainer",
+          "../components/confirm-modal.html",
+        );
+
+        document.dispatchEvent(new Event("componentsLoaded"));
+      })();
+    </script>
+<script src="../js/global.js"></script>
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/dashboard-nav.js"></script>
+    <script src="../js/withdraw.js"></script>
+        <script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '859c95c1159b8f41559f056a6563087556ca57c5';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+<!-- WhatsApp Floating Button -->
+
+<a
+  href="https://wa.me/12157689799"
+  class="whatsapp-btn"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+  </body>
+</html>

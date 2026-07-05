@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrimeTrade | Administrator Login</title>
+<link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/admin-control.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+
+    <section class="admin-login">
+      <div class="login-card">
+        <!--==========================================================
+
+            LOGO
+
+            ==========================================================-->
+
+        <div class="login-logo">
+          <h1>Prime<span>Trade</span></h1>
+
+          <p>Administrator Control Center</p>
+        </div>
+
+        <!--==========================================================
+
+            FORM
+
+            ==========================================================-->
+<div id="loginMessage" class="login-message"></div>
+
+
+
+        <form id="adminLoginForm">
+          <!-- Email -->
+
+          <div class="input-group">
+            <label> Administrator Email </label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-envelope"></i>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter administrator email"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Password -->
+
+          <div class="input-group">
+            <label> Password </label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+              />
+
+              <button type="button" class="toggle-password" id="togglePassword">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember -->
+
+          <div class="remember-box">
+            <label>
+              <input type="checkbox" id="rememberMe" />
+
+              Remember this device
+            </label>
+          </div>
+
+          <!-- Login -->
+
+          <button type="submit" class="login-btn" id="loginBtn">
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Secure Login
+          </button>
+        </form>
+
+        <!--==========================================================
+
+            SECURITY INFO
+
+            ==========================================================-->
+
+        <div class="security-box">
+          <h3>Security</h3>
+
+          <ul>
+            <li>
+              <i class="fa-solid fa-lock"></i>
+
+              Encrypted Administrator Login
+            </li>
+
+            <li>
+              <i class="fa-solid fa-user-shield"></i>
+
+              Authorized Personnel Only
+            </li>
+
+            <li>
+              <i class="fa-solid fa-clock-rotate-left"></i>
+
+              Login Activity Monitored
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+<script src="../js/global.js"></script>
+    <script src="../js/admin-control.js"></script>
+  </body>
+</html>

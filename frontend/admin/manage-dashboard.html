@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Dashboard | PrimeTrade</title>
+
+    <link rel="stylesheet" href="../css/manage-nav.css" />
+
+    <link rel="stylesheet" href="../css/manage-dashboard.css" />
+
+    <link rel="stylesheet" href="../css/global.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="toastContainer"></div>
+    <div id="manageNavContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="manage-main">
+
+        <!--==========================================================
+
+        PAGE HEADER
+
+        ==========================================================-->
+
+        <section class="page-header">
+
+            <h1>Balance Management</h1>
+
+            <p>
+
+                Manage user profits, bonuses and referral rewards.
+
+            </p>
+
+        </section>
+
+        <!--==========================================================
+
+        SEARCH
+
+        ==========================================================-->
+
+        <section class="search-card">
+
+            <input
+
+                type="text"
+
+                id="searchUser"
+
+                placeholder="Search by full name, username or email...">
+
+        </section>
+
+        <!--==========================================================
+
+        USERS TABLE
+
+        ==========================================================-->
+
+        <section class="table-card">
+
+            <div class="table-responsive">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Full Name</th>
+
+                            <th>Username</th>
+
+                            <th>Email</th>
+
+                            <th>Balance</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="usersTableBody">
+
+                        <!-- Loaded From Backend -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div id="pagination"></div>
+
+        </section>
+
+    </main>
+
+    <!--==========================================================
+
+    BALANCE MANAGEMENT MODAL
+
+    ==========================================================-->
+
+    <div class="balance-modal" id="balanceModal">
+
+        <div class="balance-content">
+
+            <button
+
+                type="button"
+
+                class="close-balance"
+
+                id="closeBalanceModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <h2>Balance Management</h2>
+
+            <div class="selected-user">
+
+                <h3 id="selectedUserName">
+
+                    User Name
+
+                </h3>
+
+                <span id="selectedUsername">
+
+                    @username
+
+                </span>
+
+                <h4 id="selectedBalance">
+
+                    Balance: $0.00
+
+                </h4>
+
+            </div>
+
+            <!--==========================================================
+
+            PROFIT
+
+            ==========================================================-->
+
+            <div class="balance-section">
+
+                <h3>Profit</h3>
+
+                <input
+
+                    type="number"
+
+                    id="profitAmount"
+
+                    placeholder="Enter amount">
+
+                <div class="action-buttons">
+
+                    <button
+
+                        type="button"
+
+                        id="addProfit">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Profit
+
+                    </button>
+
+                    <button
+
+                        type="button"
+
+                        id="removeProfit">
+
+                        <i class="fa-solid fa-minus"></i>
+
+                        Remove Profit
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!--==========================================================
+
+            BONUS
+
+            ==========================================================-->
+
+            <div class="balance-section">
+
+                <h3>Bonus</h3>
+
+                <input
+
+                    type="number"
+
+                    id="bonusAmount"
+
+                    placeholder="Enter amount">
+
+                <div class="action-buttons">
+
+                    <button
+
+                        type="button"
+
+                        id="addBonus">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Bonus
+
+                    </button>
+
+                    <button
+
+                        type="button"
+
+                        id="removeBonus">
+
+                        <i class="fa-solid fa-minus"></i>
+
+                        Remove Bonus
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!--==========================================================
+
+            REFERRAL
+
+            ==========================================================-->
+
+            <div class="balance-section">
+
+                <h3>Referral Bonus</h3>
+
+                <input
+
+                    type="number"
+
+                    id="referralAmount"
+
+                    placeholder="Enter amount">
+
+                <div class="action-buttons">
+
+                    <button
+
+                        type="button"
+
+                        id="addReferral">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Referral
+
+                    </button>
+
+                    <button
+
+                        type="button"
+
+                        id="removeReferral">
+
+                        <i class="fa-solid fa-minus"></i>
+
+                        Remove Referral
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+
+        (async () => {
+
+            await loadComponent(
+
+                "manageNavContainer",
+
+                "../components/manage-navbar.html"
+
+            );
+
+            await loadComponent(
+
+                "modalContainer",
+
+                "../components/confirm-modal.html"
+
+            );
+
+            document.dispatchEvent(
+
+                new Event("componentsLoaded")
+
+            );
+
+        })();
+
+    </script>
+
+    <script src="../js/global.js"></script>
+
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/manage-nav.js"></script>
+
+    <script src="../js/manage-dashboard.js"></script>
+  </body>
+</html>

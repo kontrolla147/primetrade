@@ -1,0 +1,39 @@
+{
+  "name": "primetrade",
+  "version": "1.0.0",
+  "description": "PrimeTrade Cryptocurrency Investment Platform",
+  "main": "backend/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": [
+    "crypto",
+    "investment",
+    "bitcoin",
+    "express",
+    "mongodb",
+    "primetrade"
+  ],
+  "author": "PrimeTrade",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "*",
+    "cloudinary": "*",
+    "cookie-parser": "^1.4.7",
+    "cors": "*",
+    "dotenv": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "multer": "*",
+    "nodemailer": "*",
+    "validator": "*"
+  },
+  "devDependencies": {
+    "nodemon": "*"
+  }
+}

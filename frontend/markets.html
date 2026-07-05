@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/global.css" />
+
+    <link rel="stylesheet" href="css/navbar.css" />
+
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <link rel="stylesheet" href="css/markets.css" />
+  </head>
+  <body>
+   <!--==========================================================
+LOADER
+===========================================================-->
+
+<div class="loader">
+
+    <div class="loader-box">
+
+        <div class="loader-spinner"></div>
+
+        <h1 class="loader-logo">
+
+            Prime<span>Trade</span>
+
+        </h1>
+
+        <p>Loading...</p>
+
+    </div>
+
+</div>
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+    <!--==========================================================
+MARKETS HERO
+===========================================================-->
+
+    <!--==========================================================
+MARKETS HERO
+===========================================================-->
+
+    <section class="markets-hero">
+      <div class="hero-overlay"></div>
+
+      <div class="pt-container hero-grid">
+        <!-- LEFT -->
+
+        <div class="hero-content fade-up">
+          <span class="pt-badge"> 📈 LIVE CRYPTO MARKETS </span>
+
+          <h1>
+            Track The World's<br />
+
+            Leading Digital Assets
+          </h1>
+
+          <p>
+            Stay updated with live cryptocurrency prices, market trends, trading
+            activity and investment opportunities across the world's largest
+            digital assets.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="/pages/register.html" class="pt-btn pt-btn-primary">
+              Become A Prime Member
+            </a>
+
+            <a href="/investment-plans.html" class="pt-btn pt-btn-outline">
+              Investment Plans
+            </a>
+          </div>
+
+          <div class="market-highlights">
+            <div>
+              <strong>250K+</strong>
+
+              <span>Investors</span>
+            </div>
+
+            <div>
+              <strong>180+</strong>
+
+              <span>Countries</span>
+            </div>
+
+            <div>
+              <strong>24/7</strong>
+
+              <span>Markets</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="hero-visual fade-up">
+          <div class="market-card">
+            <div class="market-card-header">
+              <span>Live Market Overview</span>
+
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <!-- Bitcoin -->
+
+            <div class="market-item">
+              <span>Bitcoin</span>
+
+              <strong id="btc-price"> Loading... </strong>
+
+              <small id="btc-change"> -- </small>
+            </div>
+
+            <!-- Ethereum -->
+
+            <div class="market-item">
+              <span>Ethereum</span>
+
+              <strong id="eth-price"> Loading... </strong>
+
+              <small id="eth-change"> -- </small>
+            </div>
+
+            <!-- BNB -->
+
+            <div class="market-item">
+              <span>BNB</span>
+
+              <strong id="bnb-price"> Loading... </strong>
+
+              <small id="bnb-change"> -- </small>
+            </div>
+
+            <!-- Solana -->
+
+            <div class="market-item">
+              <span>Solana</span>
+
+              <strong id="sol-price"> Loading... </strong>
+
+              <small id="sol-change"> -- </small>
+            </div>
+
+            <!-- Live Status -->
+
+            <div class="market-chart">
+              <span> 🟢 Live Market Data </span>
+
+              <strong> Updates Every 30 Seconds </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================================================
+LIVE MARKET OVERVIEW
+===========================================================-->
+
+    
+    <!--==========================================================
+LIVE CRYPTO MARKET
+===========================================================-->
+
+    <section class="crypto-market pt-section">
+      <div class="pt-container">
+        <div class="section-header fade-up">
+          <span class="pt-badge"> Live Cryptocurrency Market </span>
+
+          <h2>Top Cryptocurrencies</h2>
+
+          <p>
+            Follow live prices, market capitalization, trading volume and daily
+            market performance from the world's leading digital assets.
+          </p>
+        </div>
+
+        <!-- Toolbar -->
+
+        <div class="market-toolbar fade-up">
+          <div class="market-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              id="marketSearch"
+              placeholder="Search Bitcoin, Ethereum, Solana..."
+            />
+          </div>
+
+          <button id="refreshMarkets" class="refresh-btn">
+            <i class="fa-solid fa-rotate-right"></i>
+
+            Refresh
+          </button>
+        </div>
+
+        <!-- Market Table -->
+
+        <div class="market-table-wrapper fade-up">
+          <table class="market-table">
+            <thead>
+              <tr>
+                <th>#</th>
+
+                <th>Coin</th>
+
+                <th>Price</th>
+
+                <th>24H</th>
+
+                <th>Market Cap</th>
+
+                <th>24H Volume</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="marketTable">
+              <tr>
+                <td colspan="7">
+                  <div class="market-loading">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    <p>Loading live cryptocurrency market...</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="market-cta pt-section">
+      <div class="pt-container">
+        <div class="market-cta-box fade-up">
+          <span class="pt-badge"> Start Investing Today </span>
+
+          <h2>Invest With Confidence On PrimeTrade</h2>
+
+          <p>
+            Join thousands of investors around the world using PrimeTrade to
+            build long-term wealth through secure cryptocurrency investments,
+            real-time market insights and professional portfolio management.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="/pages/register.html" class="pt-btn pt-btn-primary">
+              Become A Prime Member
+            </a>
+
+            <a href="/investment-plans.html" class="pt-btn pt-btn-outline">
+              View Investment Plans
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================================================
+WHY TRADE WITH PRIMETRADE
+===========================================================-->
+
+    <section class="why-market pt-section">
+      <div class="pt-container">
+        <div class="section-header fade-up">
+          <span class="pt-badge"> Why PrimeTrade </span>
+
+          <h2>Trade Smarter With A Trusted Platform</h2>
+
+          <p>
+            PrimeTrade combines advanced technology, professional security and
+            real-time market data to help investors make informed decisions.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card fade-up">
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>Bank-Level Security</h3>
+
+            <p>
+              Multi-layer encryption, secure authentication and protected user
+              accounts.
+            </p>
+          </div>
+
+          <div class="why-card fade-up">
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>Real-Time Markets</h3>
+
+            <p>
+              Live cryptocurrency prices updated continuously from global market
+              sources.
+            </p>
+          </div>
+
+          <div class="why-card fade-up">
+            <i class="fa-solid fa-chart-line"></i>
+
+            <h3>Professional Insights</h3>
+
+            <p>
+              Stay ahead with market analysis, trends and investment
+              opportunities.
+            </p>
+          </div>
+
+          <div class="why-card fade-up">
+            <i class="fa-solid fa-wallet"></i>
+
+            <h3>Fast Transactions</h3>
+
+            <p>
+              Deposit and withdraw your digital assets quickly and securely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================================================
+CRYPTO LEARNING CENTER
+===========================================================-->
+
+    <section class="learning-center pt-section">
+      <div class="pt-container">
+        <div class="section-header fade-up">
+          <span class="pt-badge"> Learn Cryptocurrency </span>
+
+          <h2>Expand Your Crypto Knowledge</h2>
+
+          <p>
+            Learn the fundamentals of cryptocurrency investing with
+            beginner-friendly guides and educational resources.
+          </p>
+        </div>
+
+        <div class="learning-grid">
+          <article class="learning-card fade-up">
+            <div class="learning-icon">
+              <i class="fa-brands fa-bitcoin"></i>
+            </div>
+
+            <h3>What Is Bitcoin?</h3>
+
+            <p>
+              Learn how Bitcoin works, why it was created and why it remains the
+              world's largest cryptocurrency.
+            </p>
+
+            <a href="#">Read Guide →</a>
+          </article>
+
+          <article class="learning-card fade-up">
+            <div class="learning-icon">
+              <i class="fa-solid fa-link"></i>
+            </div>
+
+            <h3>Blockchain Explained</h3>
+
+            <p>
+              Discover how blockchain technology secures digital transactions
+              and powers cryptocurrencies.
+            </p>
+
+            <a href="#">Read Guide →</a>
+          </article>
+
+          <article class="learning-card fade-up">
+            <div class="learning-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h3>Investment Strategies</h3>
+
+            <p>
+              Understand different investment approaches and how to build a
+              balanced crypto portfolio.
+            </p>
+
+            <a href="#">Read Guide →</a>
+          </article>
+
+          <article class="learning-card fade-up">
+            <div class="learning-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <h3>Protect Your Assets</h3>
+
+            <p>
+              Learn the best security practices to keep your crypto investments
+              safe from threats.
+            </p>
+
+            <a href="#">Read Guide →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================================================
+MARKET INSIGHTS
+===========================================================-->
+
+    <section class="market-insights pt-section">
+      <div class="pt-container">
+        <div class="section-header fade-up">
+          <span class="pt-badge"> Daily Market Insights </span>
+
+          <h2>Today's Cryptocurrency Outlook</h2>
+
+          <p>
+            Professional market observations helping investors understand the
+            current direction of the cryptocurrency market.
+          </p>
+        </div>
+
+        <div class="insight-wrapper">
+          <div class="insight-card fade-up">
+            <div class="insight-top">
+              <div class="insight-icon">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+              </div>
+
+              <span class="insight-tag bullish"> Bullish Market </span>
+            </div>
+
+            <h3>Bitcoin Continues To Lead Market Momentum</h3>
+
+            <p>
+              Strong institutional demand continues to support the
+              cryptocurrency market while major digital assets maintain healthy
+              trading activity.
+            </p>
+          </div>
+
+          <div class="insight-card fade-up">
+            <div class="insight-top">
+              <div class="insight-icon">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+
+              <span class="insight-tag"> Portfolio Tip </span>
+            </div>
+
+            <h3>Diversification Reduces Investment Risk</h3>
+
+            <p>
+              A balanced portfolio containing multiple digital assets may help
+              reduce overall investment volatility over time.
+            </p>
+          </div>
+
+          <div class="insight-card fade-up">
+            <div class="insight-top">
+              <div class="insight-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+
+              <span class="insight-tag neutral"> Long-Term View </span>
+            </div>
+
+            <h3>Focus On Long-Term Growth</h3>
+
+            <p>
+              Successful investors often build wealth through consistent
+              long-term investing instead of reacting to short-term market
+              fluctuations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================================================
+FREQUENTLY ASKED QUESTIONS
+===========================================================-->
+
+    <section class="faq-section pt-section">
+      <div class="pt-container">
+        <div class="section-header fade-up">
+          <span class="pt-badge"> Frequently Asked Questions </span>
+
+          <h2>Everything You Need To Know</h2>
+
+          <p>
+            Find answers to the most common questions about PrimeTrade,
+            cryptocurrency investing and our investment platform.
+          </p>
+        </div>
+
+        <div class="faq-wrapper">
+          <div class="faq-item active">
+            <button class="faq-question">
+              <span> How do I start investing with PrimeTrade? </span>
+
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Create your PrimeTrade account, complete verification, choose an
+                investment plan and fund your account using one of our supported
+                cryptocurrencies.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span> Is PrimeTrade safe and secure? </span>
+
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                We use industry-standard security practices including encrypted
+                connections, account protection measures, and secure
+                infrastructure to help safeguard user data and assets.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span> Which cryptocurrencies are supported? </span>
+
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                PrimeTrade supports major cryptocurrencies including Bitcoin,
+                Ethereum, USDT, BNB, Solana and additional digital assets.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span> How often are market prices updated? </span>
+
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Market prices are refreshed regularly using our market data
+                provider to provide current cryptocurrency pricing.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span> How can I contact PrimeTrade support? </span>
+
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <p>
+                Our support team is available through the contact page, live
+                chat and email to assist with your account and investment
+                questions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="js/navbar.js"></script>
+
+    <script src="js/global.js"></script>
+    <script src="js/markets.js"></script>
+    <script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '859c95c1159b8f41559f056a6563087556ca57c5';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+
+<a
+  href="https://wa.me/12157689799"
+  class="whatsapp-btn"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+  </body>
+</html>

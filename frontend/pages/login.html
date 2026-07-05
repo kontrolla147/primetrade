@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <title>Login | PrimeTrade</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Auth CSS -->
+
+    <link rel="stylesheet" href="../css/auth.css" />
+  </head>
+
+  <body>
+    <div id="toast-container"></div>
+    <!--==========================
+
+    Animated Background
+
+    ===========================-->
+
+    <div class="background">
+      <div class="background-grid"></div>
+
+      <div class="background-glow glow-left"></div>
+
+      <div class="background-glow glow-right"></div>
+
+      <div class="floating-icons">
+        <i class="fa-brands fa-bitcoin"></i>
+
+        <i class="fa-brands fa-ethereum"></i>
+
+        <i class="fa-solid fa-wallet"></i>
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <i class="fa-solid fa-lock"></i>
+
+        <i class="fa-solid fa-coins"></i>
+
+        <i class="fa-solid fa-globe"></i>
+      </div>
+    </div>
+
+    <!--==========================================================
+
+LOGIN CONTAINER
+
+===========================================================-->
+
+    <section class="auth-section">
+      <div class="auth-card">
+        <div class="card-glow"></div>
+
+        <!--==========================================================
+
+LOGO
+
+===========================================================-->
+
+        <div class="auth-logo">
+          <a href="../index.html"> Prime<span>Trade</span> </a>
+        </div>
+
+        <!--==========================================================
+
+HEADER
+
+===========================================================-->
+
+        <div class="auth-header">
+          <h1>Welcome Back</h1>
+
+          <p>Sign in to access your investment dashboard.</p>
+        </div>
+
+        <!--==========================================================
+FORM
+===========================================================-->
+
+        <form id="loginForm">
+          <!-- Email -->
+
+          <div class="input-group">
+            <label>Email Address</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-envelope"></i>
+
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Password -->
+
+          <div class="input-group">
+            <label>Password</label>
+
+            <div class="input-box">
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+              />
+
+              <span class="toggle-password">
+                <i class="fa-solid fa-eye"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Remember -->
+
+          <div class="auth-options">
+            <label class="remember">
+              <input type="checkbox" />
+
+              Remember Me
+            </label>
+
+            <a href="forgot-password.html"> Forgot Password? </a>
+          </div>
+
+          <!-- Button -->
+
+          <button type="submit" class="auth-btn">Login</button>
+        </form>
+
+        <!--==========================================================
+DIVIDER
+===========================================================-->
+
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+        <!--==========================================================
+REGISTER
+===========================================================-->
+
+        <div class="auth-footer">
+          Don't have an account?
+
+          <a href="register.html"> Create Account </a>
+        </div>
+
+        <!--==========================================================
+BACK HOME
+===========================================================-->
+
+        <div class="back-home">
+          <a href="../index.html">
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================================================
+TOAST
+===========================================================-->
+
+    <div id="toast-container"></div>
+
+    <!--==========================================================
+SCRIPTS
+===========================================================-->
+
+    <script src="../js/global.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,578 @@
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+
+  background: #f5f7fb;
+
+  color: #1e293b;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dashboard-main {
+  margin-left: 270px;
+
+  padding: 40px;
+
+  min-height: 100vh;
+}
+@media(max-width:992px){
+
+.dashboard-main{
+
+    margin-left:0;
+
+    padding:90px 20px 30px;
+
+}
+
+}
+
+/*==========================================================
+PAGE HEADER
+==========================================================*/
+
+.page-header{
+
+    margin-bottom:40px;
+
+}
+
+.page-header h1{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.page-header p{
+
+    color:#6b7280;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+/*==========================================================
+PLANS SECTION
+==========================================================*/
+
+.plans-section{
+
+    margin-bottom:40px;
+
+}
+
+.section-title{
+
+    margin-bottom:25px;
+
+}
+
+.section-title h2{
+
+    font-size:24px;
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.section-title p{
+
+    color:#6b7280;
+
+}
+
+.plans-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+/*==========================================================
+PLAN CARD
+==========================================================*/
+
+.plan-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+    border:2px solid transparent;
+
+}
+
+.plan-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#16a34a;
+
+}
+
+.plan-name{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:18px;
+
+}
+
+.plan-roi{
+
+    font-size:42px;
+
+    font-weight:800;
+
+    color:#16a34a;
+
+    margin-bottom:5px;
+
+}
+
+.plan-duration{
+
+    color:#6b7280;
+
+    margin-bottom:20px;
+
+}
+
+.plan-details{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:25px;
+
+    padding:18px 0;
+
+    border-top:1px solid #f1f5f9;
+
+    border-bottom:1px solid #f1f5f9;
+
+}
+
+.plan-details div{
+
+    text-align:center;
+
+}
+
+.plan-details span{
+
+    display:block;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+}
+
+.plan-details strong{
+
+    color:#111827;
+
+}
+
+/*==========================================================
+INVEST BUTTON
+==========================================================*/
+
+.plan-card button{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.plan-card button:hover{
+
+    background:#15803d;
+
+}
+
+/*==========================================================
+INVESTMENT FORM
+==========================================================*/
+
+.investment-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:40px;
+
+    margin-bottom:40px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.card-header{
+
+    margin-bottom:30px;
+
+}
+
+.card-header h2{
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.card-header p{
+
+    color:#6b7280;
+
+}
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    height:56px;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    padding:0 18px;
+
+    outline:none;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.input-group input:focus{
+
+    border-color:#16a34a;
+
+    box-shadow:0 0 0 4px rgba(22,163,74,.12);
+
+}
+
+/*==========================================================
+SUMMARY
+==========================================================*/
+
+.investment-summary{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    margin:30px 0;
+
+}
+
+.investment-summary div{
+
+    background:#f8fafc;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    text-align:center;
+
+}
+
+.investment-summary span{
+
+    display:block;
+
+    color:#6b7280;
+
+    margin-bottom:10px;
+
+}
+
+.investment-summary strong{
+
+    font-size:28px;
+
+    color:#16a34a;
+
+}
+
+/*==========================================================
+NOTICE
+==========================================================*/
+
+.investment-notice{
+
+    background:#fff7ed;
+
+    border-left:5px solid #f97316;
+
+    border-radius:14px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+}
+
+.investment-notice h3{
+
+    color:#ea580c;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+.investment-notice ul{
+
+    padding-left:20px;
+
+}
+
+.investment-notice li{
+
+    color:#9a3412;
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+}
+
+.invest-btn{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.invest-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================================================
+MY INVESTMENTS
+==========================================================*/
+
+.my-investments{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.table-responsive{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#f8fafc;
+
+    color:#64748b;
+
+    padding:18px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:18px;
+
+    border-bottom:1px solid #eef2f7;
+
+}
+
+tbody tr:hover{
+
+    background:#f8fafc;
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:992px){
+
+.investment-card,
+
+.my-investments{
+
+    padding:25px;
+
+}
+
+.page-header h1{
+
+    font-size:28px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.plans-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.investment-summary{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.investment-card,
+
+.my-investments{
+
+    padding:20px;
+
+}
+
+.page-header h1{
+
+    font-size:24px;
+
+}
+
+.invest-btn{
+
+    height:54px;
+
+}
+
+}

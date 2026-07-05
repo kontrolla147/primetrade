@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Investment Plans | PrimeTrade</title>
+
+    <link rel="stylesheet" href="../css/global.css" />
+
+    <link rel="stylesheet" href="../css/manage-nav.css" />
+
+    <link rel="stylesheet" href="../css/manage-investments.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="manageNavContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="manage-main">
+      <!--==========================================================
+
+PAGE HEADER
+
+===========================================================-->
+
+      <section class="page-header">
+        <div>
+          <h1>Investment Plans</h1>
+
+          <p>Create, edit and manage investment plans available to users.</p>
+        </div>
+
+        <button id="newPlanBtn" class="new-plan-btn">
+          <i class="fa-solid fa-plus"></i>
+
+          New Plan
+        </button>
+      </section>
+
+      <!--==========================================================
+
+SEARCH
+
+===========================================================-->
+
+      <section class="search-card">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            id="searchPlan"
+            type="text"
+            placeholder="Search investment plans..."
+          />
+        </div>
+      </section>
+
+      <!--==========================================================
+
+STATS
+
+===========================================================-->
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+
+          <div>
+            <span>Total Plans</span>
+
+            <h2 id="totalPlans">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon active">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <div>
+            <span>Active</span>
+
+            <h2 id="activePlans">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon hidden">
+            <i class="fa-solid fa-eye-slash"></i>
+          </div>
+
+          <div>
+            <span>Hidden</span>
+
+            <h2 id="hiddenPlans">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon roi">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+
+          <div>
+            <span>Highest ROI</span>
+
+            <h2 id="highestROI">0%</h2>
+          </div>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+PLANS GRID
+
+===========================================================-->
+
+      <section id="plansGrid" class="plans-grid"></section>
+    </main>
+
+    <!--==========================================================
+
+CREATE / EDIT PLAN MODAL
+
+===========================================================-->
+
+    <div id="planModal" class="plan-modal">
+      <div class="plan-content">
+        <button id="closeModal" class="close-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2 id="modalTitle">Create Investment Plan</h2>
+
+        <form id="planForm">
+          <div class="form-grid">
+            <div class="input-group">
+              <label> Plan Name </label>
+
+              <input id="planName" type="text" required />
+            </div>
+
+            <div class="input-group">
+              <label> ROI % </label>
+
+              <input id="planROI" type="number" required />
+            </div>
+
+            <div class="input-group">
+              <label> Duration (Days) </label>
+
+              <input id="planDuration" type="number" required />
+            </div>
+
+            <div class="input-group">
+              <label> Minimum Investment ($) </label>
+
+              <input id="planMinimum" type="number" required />
+            </div>
+
+            <div class="input-group">
+              <label> Maximum Investment ($) </label>
+
+              <input id="planMaximum" type="number" required />
+            </div>
+
+            <div class="input-group">
+              <label> Badge </label>
+
+              <input id="planBadge" type="text" placeholder="Popular" />
+            </div>
+
+            <div class="input-group full-width">
+              <label> Description </label>
+
+              <textarea id="planDescription" rows="5"></textarea>
+            </div>
+
+            <div class="input-group">
+              <label> Status </label>
+
+              <select id="planStatus">
+                <option value="Active">Active</option>
+
+                <option value="Hidden">Hidden</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="save-btn" type="submit">
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Plan
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+      (async () => {
+        await loadComponent(
+          "manageNavContainer",
+
+          "../components/manage-navbar.html",
+        );
+
+        await loadComponent(
+          "modalContainer",
+
+          "../components/confirm-modal.html",
+        );
+
+        document.dispatchEvent(new Event("componentsLoaded"));
+      })();
+    </script>
+
+    <script src="../js/global.js"></script>
+
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/manage-nav.js"></script>
+
+    <script src="../js/manage-investments.js"></script>
+  </body>
+</html>

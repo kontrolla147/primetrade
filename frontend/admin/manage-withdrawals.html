@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Withdrawals | PrimeTrade</title>
+
+    <link rel="stylesheet" href="../css/global.css" />
+
+    <link rel="stylesheet" href="../css/manage-nav.css" />
+
+    <link rel="stylesheet" href="../css/manage-withdrawals.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="manageNavContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="manage-main">
+      <!--==========================================================
+
+PAGE HEADER
+
+===========================================================-->
+
+      <section class="page-header">
+        <h1>Manage Withdrawals</h1>
+
+        <p>Review, approve and reject customer withdrawal requests.</p>
+      </section>
+
+      <!--==========================================================
+
+SEARCH
+
+===========================================================-->
+
+      <section class="search-card">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            id="searchWithdrawal"
+            type="text"
+            placeholder="Search username or email..."
+          />
+        </div>
+      </section>
+
+      <!--==========================================================
+
+STATS
+
+===========================================================-->
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon pending">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+
+          <div>
+            <span>Pending</span>
+
+            <h2 id="pendingCount">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon approved">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+
+          <div>
+            <span>Approved</span>
+
+            <h2 id="approvedCount">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon rejected">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </div>
+
+          <div>
+            <span>Rejected</span>
+
+            <h2 id="rejectedCount">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon total">
+            <i class="fa-solid fa-wallet"></i>
+          </div>
+
+          <div>
+            <span>Total Amount</span>
+
+            <h2 id="totalAmount">$0</h2>
+          </div>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+WITHDRAWAL GRID
+
+===========================================================-->
+
+      <section id="withdrawalGrid" class="withdrawal-grid"></section>
+    </main>
+
+    <!--==========================================================
+
+DETAIL MODAL
+
+===========================================================-->
+
+    <div id="withdrawModal" class="withdraw-modal">
+      <div class="withdraw-content">
+        <button id="closeModal" class="close-modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Withdrawal Details</h2>
+
+        <div class="withdraw-details">
+          <div>
+            <small>User</small>
+
+            <strong id="modalUser"></strong>
+          </div>
+
+          <div>
+            <small>Email</small>
+
+            <strong id="modalEmail"></strong>
+          </div>
+
+          <div>
+            <small>Amount</small>
+
+            <strong id="modalAmount"></strong>
+          </div>
+
+          <div>
+            <small>Coin</small>
+
+            <strong id="modalCoin"></strong>
+          </div>
+
+          <div>
+            <small>Wallet Address</small>
+
+            <strong id="modalWallet"></strong>
+          </div>
+
+          <div>
+            <small>Status</small>
+
+            <strong id="modalStatus"></strong>
+          </div>
+
+          <div>
+            <small>Date</small>
+
+            <strong id="modalDate"></strong>
+          </div>
+        </div>
+        <div id="rejectReasonBox" class="reject-reason">
+
+    <label for="rejectReason">
+
+        Rejection Reason
+
+    </label>
+
+    <textarea
+
+        id="rejectReason"
+
+        placeholder="Enter the reason for rejecting this withdrawal..."
+
+        rows="4">
+
+    </textarea>
+
+</div>
+
+        <div class="modal-buttons">
+          <button id="approveWithdrawal" class="approve-btn">
+            <i class="fa-solid fa-check"></i>
+
+            Approve
+          </button>
+
+          <button id="rejectWithdrawal" class="reject-btn">
+            <i class="fa-solid fa-xmark"></i>
+
+            Reject
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+      (async () => {
+        await loadComponent(
+          "manageNavContainer",
+
+          "../components/manage-navbar.html",
+        );
+
+        await loadComponent(
+          "modalContainer",
+
+          "../components/confirm-modal.html",
+        );
+
+        document.dispatchEvent(new Event("componentsLoaded"));
+      })();
+    </script>
+
+    <script src="../js/global.js"></script>
+
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/manage-nav.js"></script>
+
+    <script src="../js/manage-withdrawals.js"></script>
+  </body>
+</html>

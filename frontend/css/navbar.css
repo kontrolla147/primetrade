@@ -1,0 +1,853 @@
+/*==========================================================
+PRIMETRADE NAVBAR
+==========================================================*/
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    padding:20px 0;
+
+    transition:.35s ease;
+
+}
+
+.navbar.scrolled{
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 15px 45px rgba(0,0,0,.08);
+
+    padding:16px 0;
+
+}
+
+/*==========================================================
+CONTAINER
+==========================================================*/
+
+.navbar-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+/*==========================================================
+LOGO
+==========================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    text-decoration:none;
+
+}
+
+.logo-box{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#d4af37,#b8860b);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.35);
+
+}
+
+.logo-text h2{
+
+    font-size:28px;
+
+    line-height:1;
+
+    margin-bottom:4px;
+
+}
+
+.logo-text small{
+
+    color:#888;
+
+    font-size:13px;
+
+    letter-spacing:.4px;
+
+}
+
+/*==========================================================
+DESKTOP NAVIGATION
+==========================================================*/
+
+.desktop-nav{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.desktop-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:38px;
+
+}
+
+.desktop-links li{
+
+    list-style:none;
+
+}
+
+.desktop-links a{
+
+    position:relative;
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+}
+
+.desktop-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.desktop-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    border-radius:20px;
+
+    background:var(--primary);
+
+    transition:.35s;
+
+}
+
+.desktop-links a:hover::after,
+
+.desktop-links a.active::after{
+
+    width:100%;
+
+}
+
+.desktop-links a.active{
+
+    color:var(--primary);
+
+}
+
+/*==========================================================
+RIGHT BUTTONS
+==========================================================*/
+
+.desktop-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.desktop-buttons .login-btn{
+
+    font-weight:600;
+
+    color:var(--text);
+
+    transition:.3s;
+
+}
+
+.desktop-buttons .login-btn:hover{
+
+    color:var(--primary);
+
+}
+
+.desktop-buttons .register-btn{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#d4af37,#b8860b);
+
+    color:#fff;
+
+    font-weight:600;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.25);
+
+    transition:.35s;
+
+}
+
+.desktop-buttons .register-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 20px 45px rgba(212,175,55,.40);
+
+}
+
+/*==========================================================
+HAMBURGER
+==========================================================*/
+
+.menu-btn{
+
+    display:none;
+
+}
+
+/*==========================================================
+MOBILE NAVIGATION
+==========================================================*/
+
+.mobile-sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:-100%;
+
+    width:75%;
+
+    max-width:340px;
+
+    height:100vh;
+
+    background:#ffffff;
+
+    box-shadow:20px 0 60px rgba(0,0,0,.15);
+
+    transition:.45s cubic-bezier(.22,1,.36,1);
+
+    z-index:1002;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow-y:auto;
+
+}
+
+.mobile-sidebar.active{
+
+    left:0;
+
+}
+
+/*==========================================================
+OVERLAY
+==========================================================*/
+
+.mobile-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(5px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:1001;
+
+}
+
+.mobile-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/*==========================================================
+SIDEBAR HEADER
+==========================================================*/
+
+.sidebar-header{
+
+    padding:35px 25px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.sidebar-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+/*==========================================================
+SIDEBAR NAVIGATION
+==========================================================*/
+
+.sidebar-nav{
+
+    flex:none;
+
+    padding:30px 20px;
+
+}
+
+.sidebar-nav ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.sidebar-nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    color:var(--text);
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.sidebar-nav a i{
+
+    width:22px;
+
+    text-align:center;
+
+    color:var(--primary);
+
+    font-size:18px;
+
+}
+
+.sidebar-nav a:hover{
+
+    background:#f8f6ef;
+
+    color:var(--primary);
+
+    transform:translateX(8px);
+
+}
+
+.sidebar-nav a.active{
+
+    background:rgba(200,161,74,.12);
+
+    color:var(--primary);
+
+}
+
+/*==========================================================
+SIDEBAR BUTTONS
+==========================================================*/
+
+.sidebar-buttons{
+
+    margin-top:60px;
+
+    padding:30px 25px 25px;
+
+    border-top:1px solid #e9e9e9;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.sidebar-buttons .login-btn{
+
+    display:block;
+
+    text-align:center;
+
+    padding:15px;
+
+    border:2px solid #e5e5e5;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.sidebar-buttons .login-btn:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+}
+
+.sidebar-buttons .register-btn{
+
+    display:block;
+
+    text-align:center;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#d4af37,#b8860b);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.sidebar-buttons .register-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/*==========================================================
+HAMBURGER
+==========================================================*/
+
+.menu-btn{
+
+    width:52px;
+
+    height:52px;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    position:relative;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    z-index:1003;
+
+}
+
+.menu-btn span{
+
+    position:absolute;
+
+    width:24px;
+
+    height:2px;
+
+    background:#222;
+
+    border-radius:20px;
+
+    transition:.35s;
+
+}
+
+.menu-btn span:nth-child(1){
+
+    transform:translateY(-8px);
+
+}
+
+.menu-btn span:nth-child(2){
+
+    transform:translateY(0);
+
+}
+
+.menu-btn span:nth-child(3){
+
+    transform:translateY(8px);
+
+}
+
+/*==========================================================
+TABLET
+==========================================================*/
+
+@media(max-width:992px){
+
+.desktop-nav,
+
+.desktop-buttons{
+
+    display:none;
+
+}
+
+.menu-btn{
+
+    display:flex;
+
+}
+
+.logo-text small{
+
+    display:none;
+
+}
+
+}
+
+/*==========================================================
+PHONE
+==========================================================*/
+
+@media(max-width:768px){
+
+.mobile-sidebar{
+
+    width:82%;
+
+}
+
+.logo-box{
+
+    width:48px;
+
+    height:48px;
+
+    font-size:20px;
+
+}
+
+.logo-text h2{
+
+    font-size:22px;
+
+}
+
+}
+
+/*==========================================================
+SMALL PHONE
+==========================================================*/
+
+@media(max-width:480px){
+
+.mobile-sidebar{
+
+    width:88%;
+
+}
+
+.sidebar-header{
+
+    padding:30px 20px;
+
+}
+
+.sidebar-nav{
+
+    padding:25px 15px;
+
+}
+
+.sidebar-buttons{
+
+    padding:20px;
+
+}
+
+}
+
+/*==========================================================
+PART 3
+ANIMATIONS
+==========================================================*/
+
+/* Hamburger Animation */
+
+.menu-btn.active span:nth-child(1){
+
+    transform:rotate(45deg);
+
+}
+
+.menu-btn.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.menu-btn.active span:nth-child(3){
+
+    transform:rotate(-45deg);
+
+}
+
+/*==========================================================
+SIDEBAR LINK ANIMATION
+==========================================================*/
+
+.sidebar-nav li{
+
+    opacity:0;
+
+    transform:translateX(-25px);
+
+    transition:.45s;
+
+}
+
+.mobile-sidebar.active .sidebar-nav li{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+.mobile-sidebar.active .sidebar-nav li:nth-child(1){
+
+    transition-delay:.05s;
+
+}
+
+.mobile-sidebar.active .sidebar-nav li:nth-child(2){
+
+    transition-delay:.10s;
+
+}
+
+.mobile-sidebar.active .sidebar-nav li:nth-child(3){
+
+    transition-delay:.15s;
+
+}
+
+.mobile-sidebar.active .sidebar-nav li:nth-child(4){
+
+    transition-delay:.20s;
+
+}
+
+.mobile-sidebar.active .sidebar-nav li:nth-child(5){
+
+    transition-delay:.25s;
+
+}
+
+/*==========================================================
+BUTTON ANIMATION
+==========================================================*/
+
+.sidebar-buttons{
+
+    margin-top:20px;
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+.mobile-sidebar.active .sidebar-buttons{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition-delay:.30s;
+
+}
+
+/*==========================================================
+HOVER EFFECTS
+==========================================================*/
+
+.sidebar-nav a{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.sidebar-nav a::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:var(--primary);
+
+    transform:scaleY(0);
+
+    transition:.3s;
+
+}
+
+.sidebar-nav a:hover::before,
+
+.sidebar-nav a.active::before{
+
+    transform:scaleY(1);
+
+}
+
+/*==========================================================
+SCROLLBAR
+==========================================================*/
+
+.mobile-sidebar::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.mobile-sidebar::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+/*==========================================================
+BODY LOCK
+==========================================================*/
+
+body.menu-open{
+
+    overflow:hidden;
+
+}
+
+/*==========================================================
+DESKTOP
+==========================================================*/
+
+@media(min-width:993px){
+
+.mobile-sidebar,
+
+.mobile-overlay{
+
+    display:none !important;
+
+}
+
+}

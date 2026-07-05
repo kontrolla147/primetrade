@@ -1,0 +1,1493 @@
+/*==========================================================
+COUNTRIES HERO
+==========================================================*/
+
+.countries-hero{
+
+    position:relative;
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top right,
+    rgba(200,161,74,.18),
+    transparent 40%),
+
+    radial-gradient(circle at bottom left,
+    rgba(200,161,74,.10),
+    transparent 45%),
+
+    linear-gradient(135deg,#faf8f5,#ffffff);
+
+}
+
+/*==========================================================
+BACKGROUND GLOWS
+==========================================================*/
+
+.countries-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+
+    height:550px;
+
+    border-radius:50%;
+
+    background:rgba(200,161,74,.08);
+
+    top:-220px;
+
+    right:-150px;
+
+    filter:blur(40px);
+
+}
+
+.countries-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(200,161,74,.05);
+
+    bottom:-180px;
+
+    left:-120px;
+
+    filter:blur(30px);
+
+}
+
+/*==========================================================
+OVERLAY
+==========================================================*/
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.65),rgba(255,255,255,.65)),
+
+    url("../assets/images/world-map.png");
+
+    background-position:center;
+
+    background-size:cover;
+
+    opacity:.18;
+
+}
+
+/*==========================================================
+CONTENT
+==========================================================*/
+
+.countries-content{
+
+    position:relative;
+
+    max-width:760px;
+
+    z-index:5;
+
+}
+
+.countries-content h1{
+
+    font-size:68px;
+
+    line-height:1.1;
+
+    margin:25px 0;
+
+}
+
+.countries-content p{
+
+    font-size:20px;
+
+    max-width:650px;
+
+    margin-bottom:40px;
+
+    color:var(--text-light);
+
+}
+
+.countries-content strong{
+
+    color:var(--primary);
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+/*==========================================================
+ANIMATION
+==========================================================*/
+
+.countries-content{
+
+    animation:heroFade 1s ease;
+
+}
+
+@keyframes heroFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:992px){
+
+.countries-content h1{
+
+    font-size:52px;
+
+}
+
+.countries-content p{
+
+    font-size:18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.countries-hero{
+
+    min-height:75vh;
+
+    text-align:center;
+
+    padding:140px 0 80px;
+
+}
+
+.countries-content{
+
+    margin:auto;
+
+}
+
+.countries-content h1{
+
+    font-size:40px;
+
+}
+
+.countries-content p{
+
+    font-size:16px;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.hero-buttons a{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.countries-content h1{
+
+    font-size:34px;
+
+}
+
+.countries-content p{
+
+    font-size:15px;
+
+}
+
+}
+
+
+/*==========================================================
+GLOBAL STATS
+==========================================================*/
+
+.global-stats{
+
+    background:#fff;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:22px;
+
+    margin-top:60px;
+
+}
+
+.stat-box{
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.04);
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.stat-icon{
+
+    font-size:42px;
+
+    margin-bottom:18px;
+
+}
+
+.stat-box h2{
+
+    font-size:38px;
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+.stat-suffix{
+
+    display:block;
+
+    font-size:14px;
+
+    color:var(--primary);
+
+    margin-top:-6px;
+
+    margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+    font-size:15px;
+
+    color:var(--text-light);
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:1100px){
+
+.stats-grid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.stats-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.stat-box{
+
+    padding:22px 15px;
+
+}
+
+.stat-icon{
+
+    font-size:34px;
+
+}
+
+.stat-box h2{
+
+    font-size:30px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.stats-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+/*==========================================================
+REGIONS
+==========================================================*/
+
+.regions{
+
+    background:var(--background);
+
+}
+
+.regions-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:28px;
+
+    margin-top:60px;
+
+}
+
+.region-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    border:1px solid var(--border);
+
+    box-shadow:0 12px 35px rgba(0,0,0,.05);
+
+    transition:.35s;
+
+}
+
+.region-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+}
+
+.region-card h3{
+
+    margin-bottom:22px;
+
+    font-size:24px;
+
+}
+
+.country-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+}
+
+.country-list span{
+
+    background:#f8f8f8;
+
+    border-radius:50px;
+
+    padding:10px 16px;
+
+    font-size:14px;
+
+    transition:.35s;
+
+}
+
+.country-list span:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transform:translateY(-3px);
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:900px){
+
+.regions-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.region-card{
+
+    padding:24px;
+
+}
+
+.country-list{
+
+    gap:10px;
+
+}
+
+.country-list span{
+
+    font-size:13px;
+
+    padding:8px 12px;
+
+}
+
+}
+
+/*==========================================================
+GLOBAL NETWORK
+==========================================================*/
+
+.global-network{
+
+    background:#fff;
+
+}
+
+.network-map{
+
+    position:relative;
+
+    margin:70px auto 0;
+
+    max-width:1000px;
+
+    height:600px;
+
+    border-radius:30px;
+
+    background:
+
+    radial-gradient(circle,#ffffff,#f5f5f5);
+
+    border:1px solid var(--border);
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.06);
+
+}
+
+/*==========================================================
+LINES
+==========================================================*/
+
+.line{
+
+    position:absolute;
+
+    height:2px;
+
+    background:rgba(200,161,74,.35);
+
+    transform-origin:left;
+
+}
+
+.line1{
+
+    width:230px;
+
+    left:170px;
+
+    top:170px;
+
+    transform:rotate(12deg);
+
+}
+
+.line2{
+
+    width:270px;
+
+    left:350px;
+
+    top:250px;
+
+    transform:rotate(-20deg);
+
+}
+
+.line3{
+
+    width:220px;
+
+    left:530px;
+
+    top:180px;
+
+    transform:rotate(28deg);
+
+}
+
+.line4{
+
+    width:240px;
+
+    left:280px;
+
+    top:330px;
+
+    transform:rotate(18deg);
+
+}
+
+.line5{
+
+    width:180px;
+
+    left:600px;
+
+    top:360px;
+
+    transform:rotate(-25deg);
+
+}
+
+/*==========================================================
+NODES
+==========================================================*/
+
+.node{
+
+    position:absolute;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.node span{
+
+    position:absolute;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:2px solid var(--primary);
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(2);
+
+        opacity:0;
+
+    }
+
+}
+
+/*==========================================================
+POSITIONS
+==========================================================*/
+
+.usa{
+
+    top:120px;
+
+    left:120px;
+
+}
+
+.uk{
+
+    top:150px;
+
+    left:340px;
+
+}
+
+.nigeria{
+
+    top:280px;
+
+    left:380px;
+
+}
+
+.uae{
+
+    top:230px;
+
+    left:560px;
+
+}
+
+.india{
+
+    top:270px;
+
+    left:670px;
+
+}
+
+.japan{
+
+    top:170px;
+
+    right:90px;
+
+}
+
+.brazil{
+
+    bottom:100px;
+
+    left:230px;
+
+}
+
+.australia{
+
+    bottom:70px;
+
+    right:180px;
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:768px){
+
+.network-map{
+
+    height:420px;
+
+}
+
+.node{
+
+    width:42px;
+
+    height:42px;
+
+    font-size:18px;
+
+}
+
+.node span{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+.line{
+
+    display:none;
+
+}
+
+}
+
+/*==========================================================
+WHY PRIMETRADE
+==========================================================*/
+
+.why-prime{
+
+    background:var(--background);
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
+    margin-top:60px;
+
+}
+
+.why-card{
+
+    background:#fff;
+
+    padding:26px;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.why-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:18px;
+
+    background:rgba(200,161,74,.12);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--primary);
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+    transition:.35s;
+
+}
+
+.why-card:hover .why-icon{
+
+    background:linear-gradient(135deg,#d4af37,#b8860b);
+
+    color:#fff;
+
+    transform:rotate(-8deg);
+
+}
+
+.why-card h3{
+
+    margin-bottom:12px;
+
+    font-size:21px;
+
+}
+
+.why-card p{
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:992px){
+
+.why-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.why-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.why-card{
+
+    padding:22px;
+
+}
+
+}
+/*==========================================================
+GROWING MARKETS
+==========================================================*/
+
+.growing-markets{
+
+    background:#fff;
+
+}
+
+.market-growth-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+    margin-top:60px;
+
+}
+
+.growth-card{
+
+    position:relative;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+.growth-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+}
+
+.growth-rank{
+
+    position:absolute;
+
+    right:18px;
+
+    top:18px;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:50%;
+
+    background:rgba(200,161,74,.12);
+
+    color:var(--primary);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:700;
+
+}
+
+.growth-flag{
+
+    font-size:56px;
+
+    margin-bottom:18px;
+
+}
+
+.growth-card h3{
+
+    font-size:22px;
+
+    margin-bottom:14px;
+
+}
+
+.growth-rate{
+
+    font-size:38px;
+
+    color:#22c55e;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+.growth-card small{
+
+    color:var(--text-light);
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:992px){
+
+.market-growth-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.market-growth-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.growth-card{
+
+    padding:24px;
+
+}
+
+}
+
+/*==========================================================
+TIMELINE
+==========================================================*/
+
+.timeline{
+
+    background:var(--background);
+
+}
+
+.timeline-wrapper{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:70px auto 0;
+
+}
+
+.timeline-line{
+
+    position:absolute;
+
+    left:28px;
+
+    top:0;
+
+    width:4px;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        to bottom,
+
+        #d4af37,
+
+        #b8860b
+
+    );
+
+    border-radius:50px;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:35px;
+
+    margin-bottom:50px;
+
+}
+
+.timeline-dot{
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    border:5px solid #fff;
+
+    box-shadow:0 0 0 6px rgba(212,175,55,.20);
+
+    margin-left:20px;
+
+    z-index:2;
+
+}
+
+.timeline-card{
+
+    flex:1;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:24px;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+}
+
+.timeline-card:hover{
+
+    transform:translateX(8px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.timeline-card span{
+
+    display:inline-block;
+
+    background:rgba(200,161,74,.12);
+
+    color:var(--primary);
+
+    padding:6px 14px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.timeline-card h3{
+
+    margin-bottom:10px;
+
+    font-size:22px;
+
+}
+
+.timeline-card p{
+
+    line-height:1.8;
+
+}
+
+/*==========================================================
+MOBILE
+==========================================================*/
+
+@media(max-width:768px){
+
+.timeline-line{
+
+    left:20px;
+
+}
+
+.timeline-dot{
+
+    margin-left:12px;
+
+}
+
+.timeline-item{
+
+    gap:22px;
+
+}
+
+.timeline-card{
+
+    padding:20px;
+
+}
+
+.timeline-card h3{
+
+    font-size:20px;
+
+}
+
+}
+
+/*==========================================================
+GLOBAL CTA
+==========================================================*/
+
+.global-cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:120px 0;
+
+    background:linear-gradient(
+        135deg,
+        #d4af37,
+        #c8a14a,
+        #b8860b
+    );
+
+}
+
+.global-cta .pt-container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*==========================================================
+CONTENT
+==========================================================*/
+
+.cta-content{
+
+    text-align:center;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.global-cta .pt-badge{
+
+    background:rgba(255,255,255,.18);
+
+    color:#fff;
+
+}
+
+.cta-content h2{
+
+    font-size:56px;
+
+    color:#fff;
+
+    margin:25px 0;
+
+    line-height:1.2;
+
+}
+
+.cta-content p{
+
+    color:rgba(255,255,255,.92);
+
+    font-size:20px;
+
+    max-width:720px;
+
+    margin:0 auto 45px;
+
+}
+
+.cta-content strong{
+
+    color:#fff;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/*==========================================================
+BUTTONS
+==========================================================*/
+
+.cta-btn{
+
+    background:#fff;
+
+    color:var(--primary);
+
+}
+
+.cta-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#f7f7f7;
+
+}
+
+.cta-outline{
+
+    border:2px solid rgba(255,255,255,.6);
+
+    color:#fff;
+
+    background:transparent;
+
+}
+
+.cta-outline:hover{
+
+    background:#fff;
+
+    color:var(--primary);
+
+}
+
+/*==========================================================
+GLOWS
+==========================================================*/
+
+.cta-glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    animation:floatGlow 8s linear infinite;
+
+}
+
+.glow1{
+
+    width:320px;
+
+    height:320px;
+
+    top:-120px;
+
+    left:-80px;
+
+}
+
+.glow2{
+
+    width:260px;
+
+    height:260px;
+
+    bottom:-120px;
+
+    right:-60px;
+
+}
+
+@keyframes floatGlow{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-20px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:768px){
+
+.global-cta{
+
+    padding:90px 0;
+
+}
+
+.cta-content h2{
+
+    font-size:36px;
+
+}
+
+.cta-content p{
+
+    font-size:17px;
+
+}
+
+.cta-buttons{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.cta-buttons .pt-btn{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+}

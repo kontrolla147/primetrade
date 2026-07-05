@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrimeTrade | Manage Users</title>
+
+    <link rel="stylesheet" href="../css/global.css" />
+
+    <link rel="stylesheet" href="../css/manage-nav.css" />
+
+    <link rel="stylesheet" href="../css/manage-users.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="manageNavContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="manage-main">
+      <!--==========================================================
+
+PAGE HEADER
+
+===========================================================-->
+
+      <section class="page-header">
+        <h1>Manage Users</h1>
+
+        <p>Edit user accounts, wallets and account settings.</p>
+      </section>
+
+      <!--==========================================================
+
+SEARCH
+
+===========================================================-->
+
+      <section class="search-card">
+        <input
+          type="text"
+          id="searchUser"
+          placeholder="Search name, username or email..."
+        />
+      </section>
+
+      <!--==========================================================
+
+TABLE
+
+===========================================================-->
+
+      <section class="table-card">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>Username</th>
+
+                <th>Email</th>
+
+                <th>Status</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="usersTableBody">
+              <!-- Loaded From Backend -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!--==========================================================
+
+USER MANAGEMENT MODAL
+
+===========================================================-->
+
+    <div class="user-modal" id="userModal">
+      <div class="user-content">
+        <button class="close-user" id="closeUserModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Manage User</h2>
+
+        <!--==========================================================
+
+USER INFO
+
+===========================================================-->
+
+        <div class="user-info">
+          <h3 id="modalFullName">Full Name</h3>
+
+          <p id="modalUsername">@username</p>
+        </div>
+
+        <!--==========================================================
+
+ACCOUNT INFORMATION
+
+===========================================================-->
+
+        <div class="section-title">Account Information</div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full Name</label>
+
+            <input type="text" id="fullName" />
+          </div>
+
+          <div class="form-group">
+            <label>Username</label>
+
+            <input type="text" id="username" />
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+
+            <input type="email" id="email" />
+          </div>
+
+          <div class="form-group">
+            <label>Phone</label>
+
+            <input type="text" id="phone" />
+          </div>
+
+          <div class="form-group">
+            <label>Country</label>
+
+            <input type="text" id="country" />
+          </div>
+        </div>
+
+        <!--==========================================================
+
+CUSTOM WALLETS
+
+===========================================================-->
+
+        <div class="section-title">Custom Wallets</div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Bitcoin</label>
+
+            <input type="text" id="btcWallet" />
+          </div>
+
+          <div class="form-group">
+            <label>Ethereum</label>
+
+            <input type="text" id="ethWallet" />
+          </div>
+
+          <div class="form-group">
+            <label>USDT TRC20</label>
+
+            <input type="text" id="trcWallet" />
+          </div>
+
+          <div class="form-group">
+            <label>USDT ERC20</label>
+
+            <input type="text" id="ercWallet" />
+          </div>
+        </div>
+        <button id="saveWallets">
+          <i class="fa-solid fa-wallet"></i>
+          Save Wallets
+        </button>
+        <!--==========================================================
+
+STATUS
+
+===========================================================-->
+
+        <div class="section-title">Account Status</div>
+
+        <div class="status-actions">
+          <button id="toggleStatus">Suspend User</button>
+
+          <button id="loginAsUser">Login As User</button>
+        </div>
+
+        <!--==========================================================
+
+KYC
+
+===========================================================-->
+
+        <div class="section-title">KYC Verification</div>
+
+        <div class="status-actions">
+          <button id="approveKyc">Approve</button>
+
+          <button id="rejectKyc">Reject</button>
+        </div>
+
+        <!--==========================================================
+
+BOTTOM ACTIONS
+
+===========================================================-->
+
+        <div class="bottom-actions">
+          <button id="saveUser">
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Changes
+          </button>
+
+          <button id="deleteUser">
+            <i class="fa-solid fa-trash"></i>
+
+            Delete User
+          </button>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+      (async () => {
+        await loadComponent(
+          "manageNavContainer",
+
+          "../components/manage-navbar.html",
+        );
+
+        await loadComponent(
+          "modalContainer",
+
+          "../components/confirm-modal.html",
+        );
+
+        document.dispatchEvent(new Event("componentsLoaded"));
+      })();
+    </script>
+
+    <script src="../js/global.js"></script>
+
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/manage-nav.js"></script>
+
+    <script src="../js/manage-users.js"></script>
+  </body>
+</html>

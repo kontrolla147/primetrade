@@ -1,0 +1,2073 @@
+/*==========================================================
+RESET
+==========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    min-height:100vh;
+
+   
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    color:#ffffff;
+
+    background:#081529;
+
+}
+
+/*==========================================================
+VARIABLES
+==========================================================*/
+
+:root{
+
+    --primary:#2563eb;
+
+    --primary-light:#3b82f6;
+
+    --primary-dark:#1d4ed8;
+
+    --green:#22c55e;
+
+    --card:#13233d;
+
+    --card-light:#1b2f52;
+
+    --border:rgba(255,255,255,.08);
+
+    --text:#ffffff;
+
+    --text-light:#cbd5e1;
+
+}
+
+/*==========================================================
+BACKGROUND
+==========================================================*/
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-5;
+
+}
+
+/*==========================================================
+BLUE GLOW ONE
+==========================================================*/
+
+.background::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+   
+
+    opacity:.18;
+
+    filter:blur(130px);
+
+    top:-180px;
+
+    left:-120px;
+
+   
+
+}
+
+/*==========================================================
+BLUE GLOW TWO
+==========================================================*/
+
+.background::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+ 
+
+    opacity:.15;
+
+    filter:blur(120px);
+
+    right:-140px;
+
+    bottom:-120px;
+
+
+}
+
+@keyframes moveGlowOne{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(140px,80px);
+
+    }
+
+}
+
+@keyframes moveGlowTwo{
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+    to{
+
+        transform:translate(-120px,-80px);
+
+    }
+
+}
+
+/*==========================================================
+FALLING ICONS
+==========================================================*/
+
+.floating-icons{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.floating-icons i{
+
+    position:absolute;
+
+    top:-120px;
+
+    color:rgba(255,255,255,.08);
+
+    font-size:28px;
+
+    animation:fall linear infinite;
+
+    pointer-events:none;
+
+}
+
+/*==========================================================
+INDIVIDUAL ICONS
+==========================================================*/
+
+.floating-icons i:nth-child(1){
+
+    left:4%;
+
+    color:#f7931a;
+
+    animation-duration:18s;
+
+}
+
+.floating-icons i:nth-child(2){
+
+    left:15%;
+
+    color:#627eea;
+
+    animation-duration:22s;
+
+}
+
+.floating-icons i:nth-child(3){
+
+    left:28%;
+
+    color:#3b82f6;
+
+    animation-duration:19s;
+
+}
+
+.floating-icons i:nth-child(4){
+
+    left:40%;
+
+    color:#22c55e;
+
+    animation-duration:24s;
+
+}
+
+.floating-icons i:nth-child(5){
+
+    left:54%;
+
+    color:#38bdf8;
+
+    animation-duration:20s;
+
+}
+
+.floating-icons i:nth-child(6){
+
+    left:67%;
+
+    color:#f59e0b;
+
+    animation-duration:21s;
+
+}
+
+.floating-icons i:nth-child(7){
+
+    left:81%;
+
+    color:#60a5fa;
+
+    animation-duration:17s;
+
+}
+
+.floating-icons i:nth-child(8){
+
+    left:93%;
+
+    color:#14b8a6;
+
+    animation-duration:23s;
+
+}
+
+/*==========================================================
+FALL ANIMATION
+==========================================================*/
+
+@keyframes fall{
+
+    0%{
+
+        transform:
+        translateY(-120px)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:.18;
+
+    }
+
+    90%{
+
+        opacity:.18;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(120vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+/*==========================================================
+AUTH SECTION
+==========================================================*/
+
+.auth-section{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+/*==========================================================
+AUTH CARD
+==========================================================*/
+
+.auth-card{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:470px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:rgba(18,34,58,.88);
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        inset 0 1px rgba(255,255,255,.05);
+
+    overflow:hidden;
+
+    animation:cardFade .8s ease;
+
+}
+
+/*==========================================================
+TOP BLUE LINE
+==========================================================*/
+
+.auth-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #3b82f6,
+        #22c55e
+    );
+
+}
+
+/*==========================================================
+GLOW EFFECT
+==========================================================*/
+
+.auth-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    opacity:.08;
+
+    filter:blur(90px);
+
+    top:-80px;
+
+    right:-60px;
+
+    pointer-events:none;
+
+}
+
+/*==========================================================
+LOGO
+==========================================================*/
+
+.auth-logo{
+
+    text-align:center;
+
+    margin-bottom:28px;
+
+}
+
+.auth-logo a{
+
+    text-decoration:none;
+
+    font-size:36px;
+
+    font-weight:800;
+
+    color:#ffffff;
+
+    letter-spacing:.5px;
+
+}
+
+.auth-logo span{
+
+    color:#22c55e;
+
+}
+
+/*==========================================================
+LOGO ICON
+==========================================================*/
+
+.logo-icon{
+
+    width:78px;
+
+    height:78px;
+
+    margin:0 auto 18px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:
+        0 18px 40px rgba(37,99,235,.35);
+
+}
+
+.logo-icon i{
+
+    font-size:34px;
+
+    color:#fff;
+
+}
+
+/*==========================================================
+HEADER
+==========================================================*/
+
+.auth-header{
+
+    text-align:center;
+
+    margin-bottom:34px;
+
+}
+
+.auth-header h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:10px;
+
+}
+
+.auth-header p{
+
+    color:#cbd5e1;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    max-width:330px;
+
+    margin:auto;
+
+}
+
+/*==========================================================
+SMALL BADGE
+==========================================================*/
+
+.auth-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 16px;
+
+    border-radius:40px;
+
+    background:rgba(37,99,235,.15);
+
+    color:#60a5fa;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+    border:1px solid rgba(59,130,246,.18);
+
+}
+
+.auth-badge i{
+
+    font-size:13px;
+
+}
+
+/*==========================================================
+CARD HOVER
+==========================================================*/
+
+.auth-card:hover{
+
+    transform:translateY(-4px);
+
+    transition:.35s;
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.60),
+        0 0 45px rgba(37,99,235,.18);
+
+}
+
+/*==========================================================
+CARD ANIMATION
+==========================================================*/
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(35px)
+            scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+/*==========================================================
+TABLET
+==========================================================*/
+
+@media(max-width:768px){
+
+body{
+
+    overflow-y:auto;
+
+}
+
+.auth-section{
+
+    padding:25px 18px;
+
+    align-items:center;
+
+}
+
+.auth-card{
+
+    width:100%;
+
+    max-width:100%;
+
+    padding:28px;
+
+    border-radius:22px;
+
+}
+
+.auth-logo a{
+
+    font-size:30px;
+
+}
+
+.logo-icon{
+
+    width:68px;
+
+    height:68px;
+
+}
+
+.logo-icon i{
+
+    font-size:28px;
+
+}
+
+.auth-header{
+
+    margin-bottom:28px;
+
+}
+
+.auth-header h1{
+
+    font-size:28px;
+
+}
+
+.auth-header p{
+
+    font-size:14px;
+
+}
+
+.input-box input,
+
+.input-box select{
+
+    height:56px;
+
+}
+
+.auth-btn{
+
+    height:56px;
+
+}
+
+.auth-options{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+}
+
+
+
+/*==========================================================
+MOBILE
+==========================================================*/
+
+@media(max-width:480px){
+
+body{
+
+    overflow-y:auto;
+
+}
+
+.auth-section{
+
+    padding:18px;
+
+}
+
+.auth-card{
+
+    width:100%;
+
+    padding:22px;
+
+    border-radius:18px;
+
+}
+
+.auth-logo{
+
+    margin-bottom:20px;
+
+}
+
+.auth-logo a{
+
+    font-size:26px;
+
+}
+
+.logo-icon{
+
+    width:60px;
+
+    height:60px;
+
+    margin-bottom:15px;
+
+}
+
+.logo-icon i{
+
+    font-size:24px;
+
+}
+
+.auth-header{
+
+    margin-bottom:22px;
+
+}
+
+.auth-header h1{
+
+    font-size:23px;
+
+}
+
+.auth-header p{
+
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+
+.input-group{
+
+    margin-bottom:16px;
+
+}
+
+.input-box input,
+
+.input-box select{
+
+    height:52px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+}
+
+.auth-btn{
+
+    height:52px;
+
+    font-size:15px;
+
+}
+
+.auth-footer{
+
+    font-size:14px;
+
+}
+
+.back-home{
+
+    margin-top:18px;
+
+}
+
+}
+
+
+/*==========================================================
+FORM
+==========================================================*/
+
+.auth-form{
+
+    width:100%;
+
+}
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#dbe7ff;
+
+    letter-spacing:.3px;
+
+}
+
+/*==========================================================
+INPUT BOX
+==========================================================*/
+
+.input-box{
+
+    position:relative;
+
+    transition:.35s ease;
+
+}
+
+.input-box input,
+.input-box select{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:16px;
+
+    background:#1a2c49;
+
+    color:#ffffff;
+
+    padding:0 55px 0 52px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s ease;
+
+}
+
+/*==========================================================
+PLACEHOLDER
+==========================================================*/
+
+.input-box input::placeholder{
+
+    color:#8ea4c7;
+
+}
+
+/*==========================================================
+LEFT ICON
+==========================================================*/
+
+.input-box>i:first-child{
+
+    position:absolute;
+
+    left:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#60a5fa;
+
+    font-size:18px;
+
+    transition:.35s;
+
+}
+
+/*==========================================================
+FOCUS
+==========================================================*/
+
+.input-box input:focus,
+.input-box select:focus{
+
+    background:#20365b;
+
+    border-color:#3b82f6;
+
+    box-shadow:
+
+        0 0 0 4px rgba(37,99,235,.18),
+
+        0 12px 30px rgba(37,99,235,.12);
+
+}
+
+.input-box input:focus+i,
+
+.input-box select:focus+i{
+
+    color:#ffffff;
+
+}
+
+/*==========================================================
+ACTIVE INPUT
+==========================================================*/
+
+.input-box.active{
+
+    transform:translateY(-2px);
+
+}
+
+.input-box.active input{
+
+    background:#20365b;
+
+}
+
+/*==========================================================
+PASSWORD TOGGLE
+==========================================================*/
+
+.toggle-password{
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    color:#8ea4c7;
+
+    transition:.35s;
+
+}
+
+.toggle-password:hover{
+
+    background:rgba(59,130,246,.15);
+
+    color:#ffffff;
+
+}
+
+.toggle-password i{
+
+    font-size:17px;
+
+}
+
+/*==========================================================
+INPUT SUCCESS
+==========================================================*/
+
+.input-box.success input{
+
+    border-color:#22c55e;
+
+}
+
+.input-box.success>i:first-child{
+
+    color:#22c55e;
+
+}
+
+/*==========================================================
+INPUT ERROR
+==========================================================*/
+
+.input-box.error input{
+
+    border-color:#ef4444;
+
+    box-shadow:0 0 0 4px rgba(239,68,68,.12);
+
+}
+
+.input-box.error>i:first-child{
+
+    color:#ef4444;
+
+}
+
+/*==========================================================
+PASSWORD MESSAGE
+==========================================================*/
+
+#passwordMessage{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#93c5fd;
+
+    transition:.3s;
+
+}
+
+/*==========================================================
+HELP TEXT
+==========================================================*/
+
+.input-help{
+
+    margin-top:8px;
+
+    font-size:13px;
+
+    color:#8ea4c7;
+
+}
+
+/*==========================================================
+INPUT HOVER
+==========================================================*/
+
+.input-box:hover input{
+
+    border-color:rgba(59,130,246,.35);
+
+}
+
+/*==========================================================
+SELECT
+==========================================================*/
+
+.input-box select{
+
+    cursor:pointer;
+
+    appearance:none;
+
+}
+
+.input-box select option{
+
+    background:#10203b;
+
+    color:#ffffff;
+
+}
+
+/*==========================================================
+INPUT ANIMATION
+==========================================================*/
+
+.input-group{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    animation:inputFade .6s forwards;
+
+}
+
+.input-group:nth-child(1){
+
+    animation-delay:.15s;
+
+}
+
+.input-group:nth-child(2){
+
+    animation-delay:.25s;
+
+}
+
+.input-group:nth-child(3){
+
+    animation-delay:.35s;
+
+}
+
+.input-group:nth-child(4){
+
+    animation-delay:.45s;
+
+}
+
+.input-group:nth-child(5){
+
+    animation-delay:.55s;
+
+}
+
+@keyframes inputFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:768px){
+
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+.input-box input,
+.input-box select{
+
+    height:56px;
+
+    font-size:15px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.input-box input,
+.input-box select{
+
+    height:54px;
+
+    border-radius:14px;
+
+    padding-left:48px;
+
+    font-size:15px;
+
+}
+
+.input-box>i:first-child{
+
+    left:16px;
+
+    font-size:17px;
+
+}
+
+.toggle-password{
+
+    right:15px;
+
+}
+
+}
+
+
+/*==========================================================
+AUTH OPTIONS
+==========================================================*/
+
+.auth-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:24px 0 30px;
+
+    gap:15px;
+
+}
+
+.remember{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#cbd5e1;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+}
+
+.remember input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:#2563eb;
+
+    cursor:pointer;
+
+}
+
+.auth-options a{
+
+    color:#60a5fa;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+.auth-options a:hover{
+
+    color:#ffffff;
+
+}
+
+/*==========================================================
+LOGIN BUTTON
+==========================================================*/
+
+.auth-btn{
+
+    position:relative;
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:
+        0 18px 35px rgba(37,99,235,.30);
+
+}
+
+/*==========================================================
+BUTTON SHINE
+==========================================================*/
+
+.auth-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transition:.7s;
+
+}
+
+.auth-btn:hover::before{
+
+    left:100%;
+
+}
+
+/*==========================================================
+BUTTON HOVER
+==========================================================*/
+
+.auth-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 22px 45px rgba(37,99,235,.45);
+
+}
+
+.auth-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.auth-btn:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+/*==========================================================
+BUTTON LOADING
+==========================================================*/
+
+.auth-btn.loading{
+
+    pointer-events:none;
+
+    opacity:.85;
+
+}
+
+/*==========================================================
+DIVIDER
+==========================================================*/
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    margin:35px 0;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.divider::before,
+
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.divider span{
+
+    padding:0 18px;
+
+}
+
+/*==========================================================
+FOOTER
+==========================================================*/
+
+.auth-footer{
+
+    text-align:center;
+
+    color:#cbd5e1;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.auth-footer a{
+
+    color:#3b82f6;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+
+}
+
+.auth-footer a:hover{
+
+    color:#ffffff;
+
+}
+
+/*==========================================================
+BACK HOME
+==========================================================*/
+
+.back-home{
+
+    margin-top:28px;
+
+    text-align:center;
+
+}
+
+.back-home a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#94a3b8;
+
+    font-size:15px;
+
+    text-decoration:none;
+
+    transition:.3s ease;
+
+}
+
+.back-home a i{
+
+    transition:.3s ease;
+
+}
+
+.back-home a:hover{
+
+    color:#ffffff;
+
+}
+
+.back-home a:hover i{
+
+    transform:translateX(-5px);
+
+}
+
+/*==========================================================
+SMALL INFO
+==========================================================*/
+
+.auth-note{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+/*==========================================================
+BUTTON ANIMATION
+==========================================================*/
+
+.auth-btn{
+
+    animation:buttonFade .8s ease;
+
+}
+
+@keyframes buttonFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+LINK ANIMATION
+==========================================================*/
+
+.auth-footer,
+.back-home{
+
+    animation:fadeLinks .9s ease;
+
+}
+
+@keyframes fadeLinks{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:768px){
+
+.auth-options{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:16px;
+
+}
+
+.auth-btn{
+
+    height:56px;
+
+}
+
+.divider{
+
+    margin:28px 0;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.auth-btn{
+
+    height:54px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+}
+
+.auth-footer{
+
+    font-size:14px;
+
+}
+
+.back-home{
+
+    margin-top:22px;
+
+}
+
+}
+
+/*==========================================================
+TOAST
+==========================================================*/
+
+#toast-container{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    z-index:99999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    pointer-events:none;
+
+}
+
+.toast{
+
+    min-width:320px;
+
+    max-width:420px;
+
+    padding:16px 20px;
+
+    border-radius:16px;
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.35);
+
+    animation:toastIn .4s ease;
+
+}
+
+.toast.success{
+
+    background:rgba(34,197,94,.18);
+
+    border-color:rgba(34,197,94,.25);
+
+}
+
+.toast.error{
+
+    background:rgba(239,68,68,.18);
+
+    border-color:rgba(239,68,68,.25);
+
+}
+
+.toast.warning{
+
+    background:rgba(245,158,11,.18);
+
+    border-color:rgba(245,158,11,.25);
+
+}
+
+@keyframes toastIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+/*==========================================================
+LOADER BUTTON
+==========================================================*/
+
+.auth-btn.loading{
+
+    pointer-events:none;
+
+    opacity:.9;
+
+}
+
+.auth-btn.loading::after{
+
+    content:"";
+
+    width:18px;
+
+    height:18px;
+
+    margin-left:12px;
+
+    border:2px solid rgba(255,255,255,.35);
+
+    border-top:2px solid #fff;
+
+    border-radius:50%;
+
+    display:inline-block;
+
+    animation:spin .7s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*==========================================================
+AUTOFILL FIX
+==========================================================*/
+
+input:-webkit-autofill,
+
+input:-webkit-autofill:hover,
+
+input:-webkit-autofill:focus{
+
+    -webkit-text-fill-color:#ffffff;
+
+    transition:background-color 5000s ease-in-out 0s;
+
+    box-shadow:0 0 0 1000px #1a2c49 inset;
+
+}
+
+/*==========================================================
+SCROLLBAR
+==========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#081321;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+
+        #2563eb,
+
+        #3b82f6
+
+    );
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:linear-gradient(
+
+        #3b82f6,
+
+        #60a5fa
+
+    );
+
+}
+
+/*==========================================================
+TEXT SELECTION
+==========================================================*/
+
+::selection{
+
+    background:#2563eb;
+
+    color:#fff;
+
+}
+
+/*==========================================================
+SMOOTH ANIMATIONS
+==========================================================*/
+
+*{
+
+    transition:
+
+        background .3s,
+
+        color .3s,
+
+        border-color .3s,
+
+        box-shadow .3s,
+
+        transform .3s;
+
+}
+
+/*==========================================================
+RESPONSIVE TOAST
+==========================================================*/
+
+@media(max-width:768px){
+
+#toast-container{
+
+    left:15px;
+
+    right:15px;
+
+    top:15px;
+
+}
+
+.toast{
+
+    min-width:100%;
+
+    max-width:100%;
+
+}
+
+}
+
+/*==========================================================
+MOBILE IMPROVEMENTS
+==========================================================*/
+
+@media(max-width:480px){
+
+body{
+
+    overflow-y:auto;
+
+}
+
+.auth-card{
+
+    margin:20px auto;
+
+}
+
+.logo-icon{
+
+    margin-bottom:16px;
+
+}
+
+.auth-header{
+
+    margin-bottom:26px;
+
+}
+
+.auth-header h1{
+
+    line-height:1.2;
+
+}
+
+.auth-options{
+
+    gap:14px;
+
+}
+
+}
+
+/*==========================================================
+LARGE DESKTOP
+==========================================================*/
+
+@media(min-width:1500px){
+
+.auth-card{
+
+    max-width:520px;
+
+    padding:48px;
+
+}
+
+.auth-header h1{
+
+    font-size:38px;
+
+}
+
+}
+
+/*==========================================================
+ACCESSIBILITY
+==========================================================*/
+
+button:focus-visible,
+
+input:focus-visible,
+
+select:focus-visible,
+
+a:focus-visible{
+
+    outline:2px solid #3b82f6;
+
+    outline-offset:3px;
+
+}
+
+/*==========================================================
+REDUCE MOTION
+==========================================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+}
+
+}
+
+/*==========================================================
+END
+==========================================================*/
+

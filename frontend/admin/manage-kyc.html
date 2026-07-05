@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage KYC | PrimeTrade</title>
+
+    <link rel="stylesheet" href="../css/global.css" />
+
+    <link rel="stylesheet" href="../css/manage-nav.css" />
+
+    <link rel="stylesheet" href="../css/manage-kyc.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="manageNavContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="manage-main">
+      <!--==========================================================
+
+PAGE HEADER
+
+===========================================================-->
+
+      <section class="page-header">
+        <h1>KYC Verification</h1>
+
+        <p>Review and verify customer identity documents.</p>
+      </section>
+
+      <!--==========================================================
+
+SEARCH
+
+===========================================================-->
+
+      <section class="search-card">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            id="searchUser"
+            placeholder="Search name, username or email..."
+          />
+        </div>
+      </section>
+
+      <!--==========================================================
+
+KYC GRID
+
+===========================================================-->
+
+      <section class="kyc-grid" id="kycGrid">
+        <!-- Loaded From Backend -->
+      </section>
+    </main>
+
+    <!--==========================================================
+
+VIEW DOCUMENT MODAL
+
+===========================================================-->
+
+    <div class="kyc-modal" id="kycModal">
+      <div class="kyc-content">
+        <button class="close-modal" id="closeModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2 id="modalName">User Name</h2>
+
+        <p id="modalType">Document Type</p>
+
+        <div class="image-viewer">
+          <img id="modalImage" src="" alt="KYC Document" />
+        </div>
+
+        <div class="modal-buttons">
+          <button id="approveKyc">
+            <i class="fa-solid fa-check"></i>
+
+            Approve
+          </button>
+
+          <button id="rejectKyc">
+            <i class="fa-solid fa-xmark"></i>
+
+            Reject
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+      (async () => {
+        await loadComponent(
+          "manageNavContainer",
+
+          "../components/manage-navbar.html",
+        );
+
+        await loadComponent(
+          "modalContainer",
+
+          "../components/confirm-modal.html",
+        );
+
+        document.dispatchEvent(new Event("componentsLoaded"));
+      })();
+    </script>
+
+    <script src="../js/global.js"></script>
+
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/manage-nav.js"></script>
+
+    <script src="../js/manage-kyc.js"></script>
+  </body>
+</html>

@@ -1,0 +1,695 @@
+/*==========================================================
+RESET
+==========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#f8fafc;
+
+    color:#111827;
+
+}
+
+/*==========================================================
+MAIN
+==========================================================*/
+
+.manage-main{
+
+    margin-left:280px;
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+@media(max-width:992px){
+
+.manage-main{
+
+    margin-left:0;
+
+    padding:90px 20px 30px;
+
+}
+
+}
+
+/*==========================================================
+PAGE HEADER
+==========================================================*/
+
+.page-header{
+
+    margin-bottom:30px;
+
+}
+
+.page-header h1{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.page-header p{
+
+    color:#6b7280;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+/*==========================================================
+SEARCH
+==========================================================*/
+
+.search-card{
+
+    background:#fff;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    margin-bottom:30px;
+
+}
+
+.search-box{
+
+    position:relative;
+
+}
+
+.search-box i{
+
+    position:absolute;
+
+    left:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#94a3b8;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    height:55px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:14px;
+
+    padding-left:48px;
+
+    padding-right:18px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.search-box input:focus{
+
+    outline:none;
+
+    border-color:#16a34a;
+
+    box-shadow:0 0 0 4px rgba(22,163,74,.12);
+
+}
+
+/*==========================================================
+GRID
+==========================================================*/
+
+.kyc-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+
+    gap:20px;
+
+}
+
+
+/*==========================================================
+KYC CARD
+==========================================================*/
+
+.kyc-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    border:1px solid #edf2f7;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+}
+
+.kyc-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 14px 35px rgba(0,0,0,.08);
+
+}
+
+/*==========================================================
+HEADER
+==========================================================*/
+
+.kyc-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:16px;
+
+}
+
+.kyc-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.kyc-avatar{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:50%;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+}
+
+.kyc-user h3{
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:3px;
+
+}
+
+.kyc-user span{
+
+    font-size:12px;
+
+    color:#6b7280;
+
+}
+
+/*==========================================================
+STATUS
+==========================================================*/
+
+.status{
+
+    padding:6px 12px;
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+.status.pending{
+
+    background:#fef3c7;
+
+    color:#d97706;
+
+}
+
+.status.verified{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.status.rejected{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+/*==========================================================
+DETAILS
+==========================================================*/
+
+.kyc-details{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+}
+
+.kyc-item{
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    padding:12px;
+
+}
+
+.kyc-item small{
+
+    display:block;
+
+    color:#94a3b8;
+
+    font-size:11px;
+
+    margin-bottom:5px;
+
+}
+
+.kyc-item strong{
+
+    color:#111827;
+
+    font-size:14px;
+
+}
+
+/*==========================================================
+VIEW BUTTON
+==========================================================*/
+
+.view-btn{
+
+    width:100%;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.view-btn:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+.view-btn i{
+
+    margin-right:8px;
+
+}
+
+
+/*==========================================================
+KYC MODAL
+==========================================================*/
+
+.kyc-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.75);
+
+    backdrop-filter:blur(6px);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    z-index:5000;
+
+}
+
+.kyc-modal.show{
+
+    display:flex;
+
+}
+
+.kyc-content{
+
+    width:100%;
+
+    max-width:900px;
+
+    max-height:95vh;
+
+    overflow:auto;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    position:relative;
+
+    animation:popup .25s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*==========================================================
+CLOSE BUTTON
+==========================================================*/
+
+.close-modal{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:44px;
+
+    height:44px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f1f5f9;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:18px;
+
+}
+
+.close-modal:hover{
+
+    background:#dc2626;
+
+    color:#fff;
+
+}
+
+/*==========================================================
+TITLE
+==========================================================*/
+
+.kyc-content h2{
+
+    font-size:28px;
+
+    color:#111827;
+
+    margin-bottom:6px;
+
+}
+
+.kyc-content p{
+
+    color:#6b7280;
+
+    margin-bottom:25px;
+
+}
+
+/*==========================================================
+IMAGE VIEWER
+==========================================================*/
+
+.image-viewer{
+
+    width:100%;
+
+    height:500px;
+
+    overflow:auto;
+
+    border-radius:18px;
+
+    border:1px solid #e5e7eb;
+
+    background:#f8fafc;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:grab;
+
+}
+
+.image-viewer:active{
+
+    cursor:grabbing;
+
+}
+
+#modalImage{
+
+    max-width:100%;
+
+    max-height:100%;
+
+    transition:transform .25s ease;
+
+    transform-origin:center center;
+
+    cursor:zoom-in;
+
+    user-select:none;
+
+}
+
+/*==========================================================
+ZOOM
+==========================================================*/
+
+#modalImage.zoomed{
+
+    transform:scale(2.5);
+
+    cursor:zoom-out;
+
+}
+
+/*==========================================================
+BUTTONS
+==========================================================*/
+
+.modal-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.modal-buttons button{
+
+    flex:1;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#approveKyc{
+
+    background:#16a34a;
+
+}
+
+#approveKyc:hover{
+
+    background:#15803d;
+
+}
+
+#rejectKyc{
+
+    background:#dc2626;
+
+}
+
+#rejectKyc:hover{
+
+    background:#b91c1c;
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:768px){
+
+.kyc-content{
+
+    padding:20px;
+
+}
+
+.image-viewer{
+
+    height:350px;
+
+}
+
+.modal-buttons{
+
+    flex-direction:column;
+
+}
+
+.modal-buttons button{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.image-viewer{
+
+    height:280px;
+
+}
+
+.kyc-content h2{
+
+    font-size:22px;
+
+}
+
+}
+
+

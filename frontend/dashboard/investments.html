@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Plans | PrimeTrade</title>
+
+    <link rel="stylesheet" href="../css/dashboard-nav.css">
+
+    <link rel="stylesheet" href="../css/investments.css">
+
+    <link rel="stylesheet"
+
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div id="sidebarContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="dashboard-main">
+
+        <!--==========================================================
+
+        PAGE HEADER
+
+        ==========================================================-->
+
+        <section class="page-header">
+
+            <h1>
+
+                Investment Plans
+
+            </h1>
+
+            <p>
+
+                Choose an investment plan that matches your financial goals and start earning today.
+
+            </p>
+
+        </section>
+
+        <!--==========================================================
+
+        AVAILABLE PLANS
+
+        ==========================================================-->
+
+        <section class="plans-section">
+
+            <div class="section-title">
+
+                <h2>
+
+                    Available Plans
+
+                </h2>
+
+                <p>
+
+                    Select one of our active investment plans below.
+
+                </p>
+
+            </div>
+
+            <div class="plans-grid" id="plansContainer">
+
+                <!-- Plans loaded with JavaScript -->
+
+            </div>
+
+        </section>
+
+        <!--==========================================================
+
+        INVESTMENT FORM
+
+        ==========================================================-->
+
+        <section class="investment-card hidden" id="investmentCard">
+
+            <div class="card-header">
+
+                <h2>
+
+                    Start Investment
+
+                </h2>
+
+                <p>
+
+                    Review your selected plan before submitting.
+
+                </p>
+
+            </div>
+
+            <form id="investmentForm">
+
+                <div class="input-group">
+
+                    <label>
+
+                        Selected Plan
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        id="selectedPlan"
+
+                        readonly>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+
+                        ROI
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        id="selectedROI"
+
+                        readonly>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+
+                        Duration
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        id="selectedDuration"
+
+                        readonly>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+
+                        Investment Amount ($)
+
+                    </label>
+
+                    <input
+
+                        type="number"
+
+                        id="investmentAmount"
+
+                        placeholder="Enter investment amount"
+
+                        autocomplete="off"
+
+                        required>
+
+                </div>
+
+                <!-- Summary -->
+
+                <div class="investment-summary">
+
+                    <div>
+
+                        <span>
+
+                            Expected Profit
+
+                        </span>
+
+                        <strong id="expectedProfit">
+
+                            $0.00
+
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+
+                            Total Return
+
+                        </span>
+
+                        <strong id="totalReturn">
+
+                            $0.00
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <!-- Notice -->
+
+                <div class="investment-notice">
+
+                    <h3>
+
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        Important Notice
+
+                    </h3>
+
+                    <ul>
+
+                        <li>
+
+                            Investments begin after approval by our team.
+
+                        </li>
+
+                        <li>
+
+                            Profit is credited automatically when the investment matures.
+
+                        </li>
+
+                        <li>
+
+                            Please review your investment amount carefully before submitting.
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <button
+
+                    type="submit"
+
+                    class="invest-btn">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Start Investment
+
+                </button>
+
+            </form>
+
+        </section>
+
+        <!--==========================================================
+
+        MY INVESTMENTS
+
+        ==========================================================-->
+
+        <section class="my-investments">
+
+            <div class="card-header">
+
+                <h2>
+
+                    My Investments
+
+                </h2>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Plan</th>
+
+                            <th>Amount</th>
+
+                            <th>Profit</th>
+
+                            <th>Status</th>
+
+                            <th>End Date</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="investmentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+
+        (async () => {
+
+            await loadComponent(
+
+                "sidebarContainer",
+
+                "../components/dashboard-nav.html"
+
+            );
+
+            await loadComponent(
+
+                "modalContainer",
+
+                "../components/confirm-modal.html"
+
+            );
+
+            document.dispatchEvent(
+
+                new Event("componentsLoaded")
+
+            );
+
+        })();
+
+    </script>
+<script src="../js/global.js"></script>
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/dashboard-nav.js"></script>
+
+    <script src="../js/investment.js"></script>
+        <script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '859c95c1159b8f41559f056a6563087556ca57c5';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+
+<a
+  href="https://wa.me/12157689799"
+  class="whatsapp-btn"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+</body>
+</html>

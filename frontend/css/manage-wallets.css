@@ -1,0 +1,549 @@
+/*==========================================================
+RESET
+==========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:#f8fafc;
+
+    color:#111827;
+
+}
+
+/*==========================================================
+MAIN
+==========================================================*/
+
+.manage-main{
+
+    margin-left:280px;
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+@media(max-width:992px){
+
+.manage-main{
+
+    margin-left:0;
+
+    padding:90px 20px 30px;
+
+}
+
+}
+
+/*==========================================================
+PAGE HEADER
+==========================================================*/
+
+.page-header{
+
+    margin-bottom:30px;
+
+}
+
+.page-header h1{
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#111827;
+
+    margin-bottom:8px;
+
+}
+
+.page-header p{
+
+    color:#6b7280;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+/*==========================================================
+WALLET CARD
+==========================================================*/
+
+.wallet-card{
+
+    max-width:850px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+
+    border:1px solid #edf2f7;
+
+}
+
+/*==========================================================
+HEADER
+==========================================================*/
+
+.wallet-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+.wallet-header i{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:14px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+}
+
+.wallet-header h2{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+
+/*==========================================================
+FORM
+==========================================================*/
+
+#walletForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+/*==========================================================
+FORM GROUP
+==========================================================*/
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.form-group label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    color:#111827;
+
+}
+
+.form-group label i{
+
+    color:#16a34a;
+
+    font-size:18px;
+
+    width:22px;
+
+    text-align:center;
+
+}
+
+/*==========================================================
+INPUT
+==========================================================*/
+
+.form-group input{
+
+    width:100%;
+
+    height:58px;
+
+    padding:0 18px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    font-size:15px;
+
+    color:#111827;
+
+    transition:.3s;
+
+}
+
+.form-group input::placeholder{
+
+    color:#9ca3af;
+
+}
+
+.form-group input:focus{
+
+    outline:none;
+
+    border-color:#16a34a;
+
+    box-shadow:0 0 0 4px rgba(22,163,74,.12);
+
+}
+
+/*==========================================================
+SAVE BUTTON
+==========================================================*/
+
+#saveWallets{
+
+    margin-top:10px;
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#saveWallets:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+
+}
+
+#saveWallets:active{
+
+    transform:scale(.98);
+
+}
+
+#saveWallets:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:992px){
+
+.wallet-card{
+
+    max-width:100%;
+
+    padding:30px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.page-header{
+
+    margin-bottom:25px;
+
+}
+
+.page-header h1{
+
+    font-size:28px;
+
+}
+
+.page-header p{
+
+    font-size:14px;
+
+}
+
+.wallet-card{
+
+    padding:22px;
+
+    border-radius:18px;
+
+}
+
+.wallet-header{
+
+    margin-bottom:24px;
+
+}
+
+.wallet-header i{
+
+    width:48px;
+
+    height:48px;
+
+    font-size:20px;
+
+    border-radius:12px;
+
+}
+
+.wallet-header h2{
+
+    font-size:22px;
+
+}
+
+.form-group{
+
+    gap:8px;
+
+}
+
+.form-group label{
+
+    font-size:14px;
+
+}
+
+.form-group input{
+
+    height:52px;
+
+    font-size:14px;
+
+    padding:0 16px;
+
+}
+
+#saveWallets{
+
+    height:52px;
+
+    font-size:15px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.manage-main{
+
+    padding:80px 15px 20px;
+
+}
+
+.wallet-card{
+
+    padding:18px;
+
+    border-radius:16px;
+
+}
+
+.wallet-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+}
+
+.wallet-header h2{
+
+    font-size:20px;
+
+}
+
+.form-group label{
+
+    font-size:13px;
+
+}
+
+.form-group input{
+
+    height:48px;
+
+    font-size:13px;
+
+}
+
+#saveWallets{
+
+    height:48px;
+
+    font-size:14px;
+
+}
+
+}
+
+
+/*==========================================================
+REJECT REASON
+==========================================================*/
+
+.reject-reason{
+
+    display:none;
+
+    margin-top:25px;
+
+    opacity:0;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+}
+
+.reject-reason.show{
+
+    display:block;
+
+    opacity:1;
+
+    max-height:250px;
+
+}
+
+.reject-reason label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#1e293b;
+
+}
+
+.reject-reason textarea{
+
+    width:100%;
+
+    min-height:120px;
+
+    padding:15px;
+
+    border:2px solid #e2e8f0;
+
+    border-radius:14px;
+
+    resize:vertical;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    background:#fff;
+
+    transition:.3s;
+
+}
+
+.reject-reason textarea:focus{
+
+    outline:none;
+
+    border-color:#dc2626;
+
+    box-shadow:0 0 0 5px rgba(220,38,38,.12);
+
+}
+
+.reject-reason textarea::placeholder{
+
+    color:#94a3b8;
+
+}

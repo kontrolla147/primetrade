@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction History | PrimeTrade</title>
+
+    <link rel="stylesheet" href="../css/dashboard-nav.css" />
+
+    <link rel="stylesheet" href="../css/transactions.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="sidebarContainer"></div>
+
+    <div id="modalContainer"></div>
+
+    <main class="dashboard-main">
+      <!--==========================================================
+
+        PAGE HEADER
+
+        ==========================================================-->
+
+      <section class="page-header">
+        <h1>Transaction History</h1>
+
+        <p>
+          View all your account activities, including deposits, withdrawals,
+          investments, bonuses and profits.
+        </p>
+      </section>
+
+      <!--==========================================================
+
+        FILTER BAR
+
+        ==========================================================-->
+
+      <section class="filter-card">
+        <div class="filter-left">
+          <div class="input-group">
+            <i class="fa-solid fa-filter"></i>
+
+            <select id="transactionFilter">
+              <option value="all">All Transactions</option>
+
+              <option value="deposit">Deposits</option>
+
+              <option value="withdrawal">Withdrawals</option>
+
+              <option value="investment">Investments</option>
+
+              <option value="bonus">Bonus</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-right">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              id="searchTransaction"
+              placeholder="Search transactions..."
+              autocomplete="off"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!--==========================================================
+
+        TRANSACTION TABLE
+
+        ==========================================================-->
+
+      <section class="transaction-card">
+        <div class="card-header">
+          <h2>All Transactions</h2>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+
+                <th>Amount</th>
+
+                <th>Status</th>
+
+                <th>Date</th>
+
+                <th>Reference</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="transactionTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!--==========================================================
+PAGINATION
+===========================================================-->
+
+      <section class="pagination-section">
+        <button id="previousPage" class="page-btn">
+          <i class="fa-solid fa-chevron-left"></i>
+
+          Previous
+        </button>
+
+        <div class="page-info">
+          Page
+
+          <span id="currentPage"> 1 </span>
+
+          of
+
+          <span id="totalPages"> 1 </span>
+        </div>
+
+        <button id="nextPage" class="page-btn">
+          Next
+
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </section>
+    </main>
+
+    <!--==========================================================
+
+    TRANSACTION DETAILS MODAL
+
+    ==========================================================-->
+
+    <div class="transaction-modal hidden" id="transactionModal">
+      <div class="transaction-modal-content">
+        <button class="close-modal" id="closeTransactionModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Transaction Details</h2>
+
+        <div class="transaction-details">
+          <div>
+            <span>Type</span>
+
+            <strong id="detailType"></strong>
+          </div>
+
+          <div>
+            <span>Amount</span>
+
+            <strong id="detailAmount"></strong>
+          </div>
+
+          <div>
+            <span>Status</span>
+
+            <strong id="detailStatus"></strong>
+          </div>
+
+          <div>
+            <span>Date</span>
+
+            <strong id="detailDate"></strong>
+          </div>
+
+          <div>
+            <span>Reference</span>
+
+            <strong id="detailReference"></strong>
+          </div>
+
+          <div>
+            <span>Description</span>
+
+            <strong id="detailDescription"></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="../js/componentLoader.js"></script>
+
+    <script>
+      (async () => {
+        await loadComponent(
+          "sidebarContainer",
+
+          "../components/dashboard-nav.html",
+        );
+
+        await loadComponent(
+          "modalContainer",
+
+          "../components/confirm-modal.html",
+        );
+
+        document.dispatchEvent(new Event("componentsLoaded"));
+      })();
+    </script>
+<script src="../js/global.js"></script>
+    <script src="../js/confirm.js"></script>
+
+    <script src="../js/dashboard-nav.js"></script>
+
+    <script src="../js/transactions.js"></script>
+        <script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '859c95c1159b8f41559f056a6563087556ca57c5';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript>Powered by <a href="https://www.smartsupp.com" target="_blank">Smartsupp</a></noscript>
+
+<a
+  href="https://wa.me/12157689799"
+  class="whatsapp-btn"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+  </body>
+</html>
