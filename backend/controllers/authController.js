@@ -221,21 +221,13 @@ exports.loginUser = async (req, res) => {
 
     // Save JWT in HTTP-only cookie
 
-    res.cookie(
-      "token",
+    res.cookie("token", token, {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "strict",
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+});
 
-      token,
-
-      {
-        httpOnly: true,
-
-        secure: process.env.NODE_ENV === "production",
-
-        sameSite: "lax",
-
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-      },
-    );
 
     // Redirect based on role
 
@@ -277,17 +269,11 @@ LOGOUT USER
 ==========================================================*/
 
 exports.logoutUser = (req, res) => {
-  res.clearCookie(
-    "token",
-
-    {
-      httpOnly: true,
-
-      secure: process.env.NODE_ENV === "production",
-
-      sameSite: "lax",
-    },
-  );
+res.clearCookie("token", {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "strict",
+});
 
   return res.status(200).json({
     success: true,
