@@ -2498,32 +2498,36 @@ NEWSLETTER
 
 }
 
-@media(max-width:768px){
-
-.newsletter-box{
-
-    padding:45px 30px;
-
-}
-
-.newsletter-box h2{
-
-    font-size:34px;
-
-}
+@media (max-width:768px){
 
 .newsletter-form{
-
+    display:flex;
     flex-direction:column;
+    width:100%;
+    max-width:100%;
+}
 
+.newsletter-form input{
+    display:block;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:100% !important;
+
+    flex:none !important;
+
+    height:58px;
+
+    padding:0 20px;
+
+    border-radius:14px;
+
+    font-size:16px;
 }
 
 .newsletter-form button{
-
     width:100%;
-
-    height:60px;
-
+    height:58px;
+    border-radius:14px;
 }
 
 }
@@ -2537,7 +2541,7 @@ PREMIUM SHOWCASE
     width:100%;
     height:620px;
     overflow:hidden;
-    border-radius:30px;
+  
 }
 
 .showcase-slide{
@@ -2727,63 +2731,102 @@ PHONE
 @media(max-width:768px){
 
 .premium-showcase{
-    height:470px;
-    border-radius:20px;
+
+    height:560px;
+
+
+
 }
 
 .showcase-overlay{
 
-background:linear-gradient(
-180deg,
-rgba(5,10,20,.75),
-rgba(5,10,20,.90)
-);
+    background:linear-gradient(
+        180deg,
+        rgba(5,10,20,.55),
+        rgba(5,10,20,.92)
+    );
+
+}
+
+.premium-showcase .pt-container{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:flex-start;
+
+    height:100%;
 
 }
 
 .showcase-content{
 
-height:470px;
+    width:100%;
 
-text-align:center;
+    max-width:100%;
 
-align-items:center;
+    height:auto;
 
-max-width:100%;
+    padding:0 22px 40px;
 
-padding:0 20px;
+    justify-content:flex-end;
+
+    align-items:flex-start;
+
+    text-align:left;
+
+}
+
+.showcase-badge{
+
+    margin-bottom:16px;
 
 }
 
 .showcase-content h1{
 
-font-size:34px;
+    font-size:32px;
+
+    line-height:1.15;
+
+    margin-bottom:16px;
 
 }
 
 .showcase-content p{
 
-font-size:15px;
+    font-size:15px;
+
+    line-height:1.7;
+
+    margin-bottom:24px;
 
 }
 
 .showcase-buttons{
 
-justify-content:center;
+    width:100%;
+
+    justify-content:flex-start;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    gap:12px;
 
 }
 
 .showcase-buttons .pt-btn{
 
-width:100%;
-
-max-width:250px;
+    width:100%;
 
 }
 
 .showcase-arrow{
 
-display:none;
+    display:none;
 
 }
 
@@ -2797,37 +2840,39 @@ SMALL PHONE
 
 .premium-showcase{
 
-height:430px;
+    height:520px;
 
 }
 
 .showcase-content{
 
-height:430px;
-
-}
-
-.showcase-content h1{
-
-font-size:28px;
-
-}
-
-.showcase-content p{
-
-font-size:14px;
+    padding:0 18px 30px;
 
 }
 
 .showcase-badge{
 
-font-size:12px;
+    font-size:11px;
+
+    padding:8px 16px;
+
+}
+
+.showcase-content h1{
+
+    font-size:26px;
+
+}
+
+.showcase-content p{
+
+    font-size:14px;
+
+    line-height:1.6;
 
 }
 
 }
-
-
 /*==========================================================
 HOW IT WORKS
 ==========================================================*/
@@ -4462,4 +4507,34 @@ RESPONSIVE
 }
 
 
+
+/*==========================================================
+IOS INPUT ZOOM FIX
+==========================================================*/
+
+input,
+textarea,
+select{
+
+    font-size:16px !important;
+
+    -webkit-appearance:none;
+
+    appearance:none;
+
+    border-radius:16px;
+
+}
+
+@media(max-width:768px){
+
+    input,
+    textarea,
+    select{
+
+        font-size:16px !important;
+
+    }
+
+}
 

@@ -564,57 +564,132 @@ if (newsletterForm) {
 PREMIUM SHOWCASE
 ==========================================================*/
 
+/*==========================================================
+PREMIUM SHOWCASE DATA
+==========================================================*/
+
 const showcaseData = [
-  {
-    image: "assets/images/showcase1.jpg",
 
-    title: "Secure Investing.<br>Built For The Future.",
+    {
 
-    text: "PrimeTrade protects every investment with bank-level security, advanced encryption and professional asset management.",
-  },
+        image:"assets/images/showcase1.jpg",
 
-  {
-    image: "assets/images/showcase2.jpg",
+        badge:"PRIME INVESTMENT PLATFORM",
 
-    title: "Grow Your Wealth.<br>Without Limits.",
+        title:"Secure Investing.<br>Built For The Future.",
 
-    text: "Discover premium investment opportunities designed for consistent long-term financial growth.",
-  },
+        text:"PrimeTrade helps investors grow wealth through secure cryptocurrency investment opportunities, intelligent portfolio management and institutional-grade security trusted around the world.",
 
-  {
-    image: "assets/images/showcase3.jpg",
+        primaryText:"Become A Prime Member",
 
-    title: "Smart Investing.<br>Powered By Innovation.",
+        primaryLink:"pages/register.html",
 
-    text: "Advanced technology and professional portfolio management help maximize your investment potential.",
-  },
+        secondaryText:"Explore Plans",
 
-  {
-    image: "assets/images/showcase4.jpg",
+        secondaryLink:"investment-plans.html"
 
-    title: "Trusted Across<br>180+ Countries.",
+    },
 
-    text: "Join thousands of investors worldwide building wealth with PrimeTrade's secure investment ecosystem.",
-  },
+    {
 
-  {
-    image: "assets/images/showcase5.jpg",
+        image:"assets/images/showcase2.jpg",
 
-    title: "Your Financial Future<br>Starts Today.",
+        badge:"SMART CRYPTO INVESTING",
 
-    text: "Experience modern investing with transparent plans, fast withdrawals and world-class support.",
-  },
+        title:"Grow Your Wealth.<br>Without Limits.",
+
+        text:"Build long-term financial success through carefully designed investment plans backed by professional market research and advanced technology.",
+
+        primaryText:"Start Investing",
+
+        primaryLink:"pages/register.html",
+
+        secondaryText:"View Plans",
+
+        secondaryLink:"investment-plans.html"
+
+    },
+
+    {
+
+        image:"assets/images/showcase3.jpg",
+
+        badge:"ENTERPRISE SECURITY",
+
+        title:"Protecting Every<br>Investment You Make.",
+
+        text:"PrimeTrade secures every account using bank-level encryption, multi-layer authentication and professional asset protection.",
+
+        primaryText:"Create Account",
+
+        primaryLink:"pages/register.html",
+
+        secondaryText:"Security Center",
+
+        secondaryLink:"about.html"
+
+    },
+
+    {
+
+        image:"assets/images/showcase4.jpg",
+
+        badge:"GLOBAL COMMUNITY",
+
+        title:"Trusted Across<br>180+ Countries.",
+
+        text:"Join thousands of investors worldwide using PrimeTrade to grow wealth through secure and transparent investing.",
+
+        primaryText:"Join PrimeTrade",
+
+        primaryLink:"pages/register.html",
+
+        secondaryText:"Our Community",
+
+        secondaryLink:"countries.html"
+
+    },
+
+    {
+
+        image:"assets/images/showcase5.jpg",
+
+        badge:"START TODAY",
+
+        title:"Your Financial Future<br>Starts Here.",
+
+        text:"Experience fast withdrawals, premium investment plans, professional support and a secure platform built for modern investors.",
+
+        primaryText:"Open Free Account",
+
+        primaryLink:"pages/register.html",
+
+        secondaryText:"Contact Us",
+
+        secondaryLink:"contact.html"
+
+    }
+
 ];
 
-/*==========================================================*/
+
+/*==========================================================
+ELEMENTS
+==========================================================*/
 
 const image = document.getElementById("showcaseImage");
+
+const badge = document.getElementById("showcaseBadge");
 
 const title = document.getElementById("showcaseTitle");
 
 const text = document.getElementById("showcaseText");
 
-const dotss = document.querySelectorAll(".showcase-dots .dot");
+const primaryBtn = document.getElementById("primaryBtn");
+
+const secondaryBtn = document.getElementById("secondaryBtn");
+
+
 
 const next = document.querySelector(".showcase-arrow.next");
 
@@ -626,163 +701,282 @@ let current = 0;
 
 let auto;
 
-/*==========================================================*/
 
-function renderSlide(index) {
-  image.style.opacity = "0";
+/*==========================================================
+RENDER SLIDE
+==========================================================*/
 
-  title.style.opacity = "0";
+function renderSlide(index){
 
-  text.style.opacity = "0";
+    image.style.opacity="0";
 
-  setTimeout(() => {
-    image.src = showcaseData[index].image;
+    badge.style.opacity="0";
 
-    title.innerHTML = showcaseData[index].title;
+    title.style.opacity="0";
 
-    text.innerHTML = showcaseData[index].text;
+    text.style.opacity="0";
 
-    image.style.opacity = "1";
+    primaryBtn.style.opacity="0";
 
-    title.style.opacity = "1";
+    secondaryBtn.style.opacity="0";
 
-    text.style.opacity = "1";
+    setTimeout(()=>{
 
-    dots.forEach((dot) => dot.classList.remove("active"));
+        image.src=showcaseData[index].image;
 
-    dots[index].classList.add("active");
-  }, 350);
+        badge.innerHTML=showcaseData[index].badge;
+
+        title.innerHTML=showcaseData[index].title;
+
+        text.innerHTML=showcaseData[index].text;
+
+        primaryBtn.innerHTML=showcaseData[index].primaryText;
+
+        primaryBtn.href=showcaseData[index].primaryLink;
+
+        secondaryBtn.innerHTML=showcaseData[index].secondaryText;
+
+        secondaryBtn.href=showcaseData[index].secondaryLink;
+
+        image.style.opacity="1";
+
+        badge.style.opacity="1";
+
+        title.style.opacity="1";
+
+        text.style.opacity="1";
+
+        primaryBtn.style.opacity="1";
+
+        secondaryBtn.style.opacity="1";
+
+        dots.forEach(dot=>dot.classList.remove("active"));
+
+        dots[index].classList.add("active");
+
+    },350);
+
 }
 
-/*==========================================================*/
+/*==========================================================
+RANDOM SLIDE
+==========================================================*/
 
-function randomSlide() {
-  let random;
+function randomSlide(){
 
-  do {
-    random = Math.floor(Math.random() * showcaseData.length);
-  } while (random === current);
+    let random;
 
-  current = random;
+    do{
 
-  renderSlide(current);
-}
+        random=Math.floor(Math.random()*showcaseData.length);
 
-/*==========================================================*/
+    }while(random===current);
 
-function nextSlide() {
-  current++;
-
-  if (current >= showcaseData.length) {
-    current = 0;
-  }
-
-  renderSlide(current);
-}
-
-/*==========================================================*/
-
-function prevSlide() {
-  current--;
-
-  if (current < 0) {
-    current = showcaseData.length - 1;
-  }
-
-  renderSlide(current);
-}
-
-/*==========================================================*/
-
-function startSlider() {
-  auto = setInterval(() => {
-    randomSlide();
-  }, 6000);
-}
-
-function stopSlider() {
-  clearInterval(auto);
-}
-
-/*==========================================================*/
-
-if (next) {
-  next.addEventListener("click", () => {
-    stopSlider();
-
-    nextSlide();
-
-    startSlider();
-  });
-}
-
-if (prev) {
-  prev.addEventListener("click", () => {
-    stopSlider();
-
-    prevSlide();
-
-    startSlider();
-  });
-}
-
-/*==========================================================*/
-
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    stopSlider();
-
-    current = index;
+    current=random;
 
     renderSlide(current);
 
-    startSlider();
-  });
+}
+
+/*==========================================================
+NEXT
+==========================================================*/
+
+function nextSlide(){
+
+    current++;
+
+    if(current>=showcaseData.length){
+
+        current=0;
+
+    }
+
+    renderSlide(current);
+
+}
+
+/*==========================================================
+PREVIOUS
+==========================================================*/
+
+function prevSlide(){
+
+    current--;
+
+    if(current<0){
+
+        current=showcaseData.length-1;
+
+    }
+
+    renderSlide(current);
+
+}
+
+/*==========================================================
+AUTO SLIDER
+==========================================================*/
+
+function startSlider(){
+
+    stopSlider();
+
+    auto=setInterval(()=>{
+
+        nextSlide();
+
+    },6000);
+
+}
+
+function stopSlider(){
+
+    if(auto){
+
+        clearInterval(auto);
+
+    }
+
+}
+
+/*==========================================================
+NEXT BUTTON
+==========================================================*/
+
+if(next){
+
+    next.addEventListener("click",()=>{
+
+        nextSlide();
+
+        startSlider();
+
+    });
+
+}
+
+/*==========================================================
+PREVIOUS BUTTON
+==========================================================*/
+
+if(prev){
+
+    prev.addEventListener("click",()=>{
+
+        prevSlide();
+
+        startSlider();
+
+    });
+
+}
+
+/*==========================================================
+DOTS
+==========================================================*/
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        current=index;
+
+        renderSlide(current);
+
+        startSlider();
+
+    });
+
 });
 
-/*==========================================================*/
+/*==========================================================
+PAUSE ON HOVER
+==========================================================*/
 
-if (slider) {
-  slider.addEventListener("mouseenter", stopSlider);
+if(slider){
 
-  slider.addEventListener("mouseleave", startSlider);
+    slider.addEventListener("mouseenter",()=>{
+
+        stopSlider();
+
+    });
+
+    slider.addEventListener("mouseleave",()=>{
+
+        startSlider();
+
+    });
+
 }
 
 /*==========================================================
 MOBILE SWIPE
 ==========================================================*/
 
-let startX = 0;
+let startX=0;
 
-let endX = 0;
+let endX=0;
 
-if (slider) {
-  slider.addEventListener("touchstart", (e) => {
-    startX = e.changedTouches[0].screenX;
-  });
+if(slider){
 
-  slider.addEventListener("touchend", (e) => {
-    endX = e.changedTouches[0].screenX;
+    slider.addEventListener("touchstart",(e)=>{
 
-    if (endX < startX - 50) {
-      stopSlider();
+        startX=e.changedTouches[0].screenX;
 
-      nextSlide();
+    });
 
-      startSlider();
-    }
+    slider.addEventListener("touchend",(e)=>{
 
-    if (endX > startX + 50) {
-      stopSlider();
+        endX=e.changedTouches[0].screenX;
 
-      prevSlide();
+        if(endX<startX-50){
 
-      startSlider();
-    }
-  });
+            nextSlide();
+
+            startSlider();
+
+        }
+
+        if(endX>startX+50){
+
+            prevSlide();
+
+            startSlider();
+
+        }
+
+    });
+
 }
 
-/*==========================================================*/
+/*==========================================================
+KEYBOARD SUPPORT
+==========================================================*/
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="ArrowRight"){
+
+        nextSlide();
+
+        startSlider();
+
+    }
+
+    if(e.key==="ArrowLeft"){
+
+        prevSlide();
+
+        startSlider();
+
+    }
+
+});
+
+/*==========================================================
+INITIALIZE
+==========================================================*/
 
 renderSlide(current);
 

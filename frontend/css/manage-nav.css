@@ -249,6 +249,9 @@ MENU LINKS
     transform:translateX(6px);
 
 }
+.auth-card h3{
+    color:#fff;
+}
 
 .manage-menu a:hover i{
 
@@ -830,4 +833,35 @@ RESPONSIVE
 
 }
 
+
+
+/*==========================================================
+IOS INPUT ZOOM FIX
+==========================================================*/
+
+input,
+textarea,
+select{
+
+    font-size:16px !important;
+
+    -webkit-appearance:none;
+
+    appearance:none;
+
+    border-radius:16px;
+
+}
+
+@media(max-width:768px){
+
+    input,
+    textarea,
+    select{
+
+        font-size:16px !important;
+
+    }
+
+}
 

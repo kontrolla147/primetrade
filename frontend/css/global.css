@@ -606,17 +606,81 @@ LOADER
 WHATSAPP FLOATING BUTTON
 ==========================================================*/
 
+
+/*==========================================================
+GLOBAL BUTTON RESPONSIVE
+==========================================================*/
+
+@media (max-width:768px){
+
+    .pt-btn{
+
+        width:100%;
+
+        min-height:54px;
+
+        padding:16px 22px;
+
+        font-size:15px;
+
+        border-radius:14px;
+
+        justify-content:center;
+
+    }
+
+    .pt-btn-primary,
+    .pt-btn-outline{
+
+        width:100%;
+
+    }
+
+    .hero-buttons,
+    .cta-buttons,
+    .auth-buttons,
+    .form-buttons,
+    .button-group{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:14px;
+
+        width:100%;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .pt-btn{
+
+        min-height:52px;
+
+        padding:15px 18px;
+
+        font-size:14px;
+
+        border-radius:12px;
+
+    }
+
+}
+
 .whatsapp-btn{
 
     position:fixed;
 
-    bottom:25px;
+    right:13px;
 
-    left:25px;
+    bottom:100px; /* Above Smartsupp */
 
-    width:62px;
+    width:60px;
 
-    height:62px;
+    height:60px;
 
     border-radius:50%;
 
@@ -626,19 +690,19 @@ WHATSAPP FLOATING BUTTON
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    font-size:30px;
+    justify-content:center;
 
     text-decoration:none;
 
+    font-size:30px;
+
+    z-index:9998;
+
     box-shadow:0 15px 35px rgba(37,211,102,.35);
 
-    z-index:9999;
-
-    transition:.35s;
+    transition:.35s ease;
 
     animation:whatsappPulse 2s infinite;
 
@@ -682,11 +746,38 @@ WHATSAPP FLOATING BUTTON
 
         height:56px;
 
-        font-size:26px;
+        right:13px;
 
-        left:18px;
+        bottom:90px;
 
-        bottom:18px;
+        font-size:28px;
+
+    }
+
+}
+
+
+/*==========================================================
+FORCE MOBILE CONFIRM BUTTONS
+==========================================================*/
+
+@media screen and (max-width:768px){
+
+    .confirm-buttons{
+
+        display:flex !important;
+        flex-direction:column !important;
+        width:100% !important;
+        gap:12px !important;
+
+    }
+
+    .confirm-buttons button{
+
+        width:100% !important;
+        flex:none !important;
+        display:block !important;
+        height:54px !important;
 
     }
 
