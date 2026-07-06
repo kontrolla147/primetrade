@@ -4,7 +4,6 @@ require("./jobs/withdrawalProgressJob");
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
-const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 
 const connectDB = require("./config/db");
@@ -53,7 +52,7 @@ app.set("trust proxy", 1);
 
 app.disable("x-powered-by");
 
-app.use(helmet());
+
 
 app.use(cookieParser());
 
@@ -63,6 +62,8 @@ app.use(
     credentials: true,
   }),
 );
+
+
 
 //==========================================================
 // BODY PARSERS

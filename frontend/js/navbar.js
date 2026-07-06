@@ -75,30 +75,4 @@ function initNavbar(){
 
 }
 
-   /*==========================================================
-SMARTSUPP LIVE CHAT
-==========================================================*/
-
-window._smartsupp = window._smartsupp || {};
-
-window._smartsupp.key = "06b0820360427a30e31786448a0ef171c452ec06";
-
-(function () {
-
-    if (document.getElementById("smartsupp-loader")) return;
-
-    const script = document.createElement("script");
-
-    script.id = "smartsupp-loader";
-
-    script.type = "text/javascript";
-
-    script.charset = "utf-8";
-
-    script.async = true;
-
-    script.src = "https://www.smartsuppchat.com/loader.js";
-
-    document.head.appendChild(script);
-
-})();
+   
