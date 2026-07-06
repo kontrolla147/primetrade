@@ -53,23 +53,14 @@ exports.login = async (req, res) => {
 );
 
 res.cookie("adminToken", token, {
-
-    httpOnly: true,
-
-    secure: process.env.NODE_ENV === "production",
-
-    sameSite: "Strict",
-
-    maxAge:
-
-        Number(process.env.ADMIN_SESSION_HOURS)
-
-        * 60
-
-        * 60
-
-        * 1000
-
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "strict",
+  maxAge:
+    Number(process.env.ADMIN_SESSION_HOURS) *
+    60 *
+    60 *
+    1000,
 });
 
 
@@ -94,16 +85,11 @@ ADMIN LOGOUT
 
 exports.logout = (req, res) => {
 
-    res.clearCookie("adminToken", {
-
-        httpOnly: true,
-
-        sameSite: "Strict",
-
-        secure: process.env.NODE_ENV === "production"
-
-    });
-
+res.clearCookie("adminToken", {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "strict",
+});
     res.json({
 
         message: "Logged out successfully."

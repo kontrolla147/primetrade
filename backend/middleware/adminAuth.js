@@ -1,7 +1,10 @@
 const jwt = require("jsonwebtoken");
-const User = require("../models/User");
 
-module.exports = async (req, res, next) => {
+/*==========================================================
+ADMIN AUTHENTICATION
+==========================================================*/
+
+module.exports = (req, res, next) => {
   try {
     const token = req.cookies.adminToken;
 
@@ -14,16 +17,14 @@ module.exports = async (req, res, next) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    const admin = await User.findById(decoded.id).select("-password");
-
-    if (!admin || admin.role !== "admin") {
+    if (decoded.role !== "admin") {
       return res.status(403).json({
         success: false,
         message: "Access denied.",
       });
     }
 
-    req.admin = admin;
+    req.admin = decoded;
 
     next();
   } catch (error) {
